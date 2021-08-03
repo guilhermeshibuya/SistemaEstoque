@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema.Entidades
+namespace Sistema.Modelo
 {
     public class Produto
     {

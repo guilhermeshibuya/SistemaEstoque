@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema.Entidades
+namespace Sistema.Modelo
 {
     class Funcionario : Pessoa
     {

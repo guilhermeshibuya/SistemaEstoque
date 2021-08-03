@@ -21,15 +21,15 @@ namespace Sistema.Apresentacao
 
         private void btn_cadastrar_cliente_Click(object sender, EventArgs e)
         {
-            ControleCliente controle = new ControleCliente();
-            string mensagem = controle.Cadastrar(txt_nome.Text, txt_telefone.Text, txt_cpf.Text);
-            if (controle.Tem)
+            Cliente cliente = new Cliente();
+            string mensagem = cliente.Cadastrar(txt_nome.Text, txt_telefone.Text, txt_cpf.Text);
+            if (cliente.Tem)
             {
                 MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(controle.Mensagem);
+                MessageBox.Show(cliente.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

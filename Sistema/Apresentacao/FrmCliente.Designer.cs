@@ -31,11 +31,11 @@ namespace Sistema.Apresentacao
         {
             this.lbl_nome = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
-            this.txt_telefone = new System.Windows.Forms.TextBox();
             this.lbl_telefone = new System.Windows.Forms.Label();
-            this.txt_cpf = new System.Windows.Forms.TextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
             this.btn_cadastrar_cliente = new System.Windows.Forms.Button();
+            this.txt_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.txt_cpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lbl_nome
@@ -56,14 +56,6 @@ namespace Sistema.Apresentacao
             this.txt_nome.Size = new System.Drawing.Size(247, 27);
             this.txt_nome.TabIndex = 1;
             // 
-            // txt_telefone
-            // 
-            this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_telefone.Location = new System.Drawing.Point(100, 125);
-            this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(158, 27);
-            this.txt_telefone.TabIndex = 3;
-            // 
             // lbl_telefone
             // 
             this.lbl_telefone.AutoSize = true;
@@ -73,14 +65,6 @@ namespace Sistema.Apresentacao
             this.lbl_telefone.Size = new System.Drawing.Size(66, 20);
             this.lbl_telefone.TabIndex = 2;
             this.lbl_telefone.Text = "Telefone";
-            // 
-            // txt_cpf
-            // 
-            this.txt_cpf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_cpf.Location = new System.Drawing.Point(102, 75);
-            this.txt_cpf.Name = "txt_cpf";
-            this.txt_cpf.Size = new System.Drawing.Size(156, 27);
-            this.txt_cpf.TabIndex = 5;
             // 
             // lbl_cpf
             // 
@@ -105,20 +89,36 @@ namespace Sistema.Apresentacao
             this.btn_cadastrar_cliente.UseVisualStyleBackColor = true;
             this.btn_cadastrar_cliente.Click += new System.EventHandler(this.btn_cadastrar_cliente_Click);
             // 
+            // txt_telefone
+            // 
+            this.txt_telefone.Location = new System.Drawing.Point(100, 128);
+            this.txt_telefone.Mask = "+99 (99) 99999-9999";
+            this.txt_telefone.Name = "txt_telefone";
+            this.txt_telefone.Size = new System.Drawing.Size(158, 23);
+            this.txt_telefone.TabIndex = 7;
+            // 
+            // txt_cpf
+            // 
+            this.txt_cpf.Location = new System.Drawing.Point(100, 79);
+            this.txt_cpf.Mask = "000.000.000-00";
+            this.txt_cpf.Name = "txt_cpf";
+            this.txt_cpf.Size = new System.Drawing.Size(150, 23);
+            this.txt_cpf.TabIndex = 8;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 245);
-            this.Controls.Add(this.btn_cadastrar_cliente);
             this.Controls.Add(this.txt_cpf);
-            this.Controls.Add(this.lbl_cpf);
             this.Controls.Add(this.txt_telefone);
+            this.Controls.Add(this.btn_cadastrar_cliente);
+            this.Controls.Add(this.lbl_cpf);
             this.Controls.Add(this.lbl_telefone);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
             this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
+            this.Text = "Cadastro de Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,10 +128,10 @@ namespace Sistema.Apresentacao
 
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.TextBox txt_nome;
-        private System.Windows.Forms.TextBox txt_telefone;
         private System.Windows.Forms.Label lbl_telefone;
-        private System.Windows.Forms.TextBox txt_cpf;
         private System.Windows.Forms.Label lbl_cpf;
         private System.Windows.Forms.Button btn_cadastrar_cliente;
+        private System.Windows.Forms.MaskedTextBox txt_telefone;
+        private System.Windows.Forms.MaskedTextBox txt_cpf;
     }
 }
