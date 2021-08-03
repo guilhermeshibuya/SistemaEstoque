@@ -8,45 +8,19 @@ namespace Sistema.Modelo
 {
     abstract class Pessoa
     {
-        private string _nome;
-        private string _cpf;
-        private string _telefone;
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public string Telefone { get; set; }
 
-        public string Nome
+        public Pessoa()
         {
-            get { return _nome; }
-            set
-            {
-                if (value != null && value.Length > 1)
-                {
-                    _nome = value;
-                }
-            }
         }
 
-        public string Cpf
+        protected Pessoa(string nome, string cpf, string telefone)
         {
-            get { return _cpf; }
-            set
-            {
-                if (value != null)
-                {
-                    _cpf = value;
-                }
-            }
+            Nome = nome;
+            Cpf = cpf;
+            Telefone = telefone;
         }
-
-        public string Telefone
-        {
-            get { return _telefone; }
-            set
-            {
-                if (value != null)
-                {
-                    _nome = value;
-                }
-            }
-        }
-
     }
 }

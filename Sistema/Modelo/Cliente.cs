@@ -15,15 +15,40 @@ namespace Sistema.Modelo
 
         public int IdCliente { get; set; }
 
-        public string Cadastrar(string nome, string telefone, string cpf)
+        public Cliente()
         {
-            ClienteDao cad = new ClienteDao();
-            Mensagem = cad.Cadastrar(nome, telefone, cpf);
-            if (cad.Tem)
+        }
+
+        public Cliente(string nome, string cpf, string telefone) : base(nome, cpf, telefone)
+        {
+        }
+
+        public bool VerificarDados()
+        {
+            if ((!String.IsNullOrEmpty(Nome) && Nome.Length > 1) && (!String.IsNullOrEmpty(Cpf) && Cpf.Length == 11) && (!String.IsNullOrEmpty(Telefone) && Telefone.Length == 13))
+                return true;
+            else
+                return false;
+        }
+
+        public string Cadastrar()
+        {
+            if (VerificarDados() == true)
             {
-                this.Tem = true;
+                ClienteDao cad = new ClienteDao();
+                Mensagem = cad.Cadastrar(Nome, Telefone, Cpf);
+                if (cad.Tem)
+                {
+                    this.Tem = true;
+                }
+                return Mensagem;
             }
-            return Mensagem;
+            else
+            {
+                Mensagem = "Campo Inválido ou vazio";
+                return Mensagem;
+            }
+            
         }
     }
 }

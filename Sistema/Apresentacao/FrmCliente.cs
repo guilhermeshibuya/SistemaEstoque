@@ -21,8 +21,8 @@ namespace Sistema.Apresentacao
 
         private void btn_cadastrar_cliente_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            string mensagem = cliente.Cadastrar(txt_nome.Text, txt_telefone.Text, txt_cpf.Text);
+            Cliente cliente = new Cliente(txt_nome.Text, txt_cpf.Text, txt_telefone.Text);
+            string mensagem = cliente.Cadastrar();
             if (cliente.Tem)
             {
                 MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
