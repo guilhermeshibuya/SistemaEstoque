@@ -33,7 +33,7 @@ namespace Sistema
                 DataTable dt = new DataTable();
                 objAdp.Fill(dt);
                 
-                dgv_cadastro.DataSource = dt;
+                DgvCategoria.DataSource = dt;
             }
             catch (SqlException)
             {
