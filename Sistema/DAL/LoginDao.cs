@@ -16,7 +16,6 @@ namespace Sistema.DAL
         SqlDataReader dr;
         public bool verificarLogin(String login, String senha)
         {
-            //comandos sql para verificar se tem no banco o login e senha
             cmd.CommandText = "select * from tb_login where login = @login and senha = @senha";
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@senha", senha);
@@ -42,7 +41,7 @@ namespace Sistema.DAL
         public String cadastrar(String login, String senha, String confSenha)
         {
             tem = false;
-            if (senha.Equals(confSenha))
+            if (senha.Equals(confSenha) && login.Length >= 5 && senha.Length >= 5)
             {
                 cmd.CommandText = "insert into tb_login values(@log, @senha);";
                 cmd.Parameters.AddWithValue("@log", login);
@@ -63,7 +62,7 @@ namespace Sistema.DAL
                 }
             } else
             {
-                this.mensagem = "Senhas não correspondem!";
+                this.mensagem = "Campo(s) inválido(s)!";
             }
             
             return mensagem;

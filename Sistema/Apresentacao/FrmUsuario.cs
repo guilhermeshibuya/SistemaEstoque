@@ -20,8 +20,11 @@ namespace Sistema
                 MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } else
             {
-                MessageBox.Show(controle.mensagem);
+                MessageBox.Show(controle.mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            txt_login.Text = string.Empty;
+            txt_senha.Text = string.Empty;
+            txt_senha2.Text = string.Empty;
         }
     }
 }
