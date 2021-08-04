@@ -45,9 +45,5 @@ namespace Sistema
         {
             listaGrid();
         }
-
-        private void btn_novo_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

@@ -138,6 +138,7 @@ namespace Sistema.Apresentacao
             this.Controls.Add(this.lbl_nome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
