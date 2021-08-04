@@ -44,7 +44,7 @@ namespace Sistema
             this.lbl_categoria.AutoSize = true;
             this.lbl_categoria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_categoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.lbl_categoria.Location = new System.Drawing.Point(183, 21);
+            this.lbl_categoria.Location = new System.Drawing.Point(12, 18);
             this.lbl_categoria.Name = "lbl_categoria";
             this.lbl_categoria.Size = new System.Drawing.Size(80, 18);
             this.lbl_categoria.TabIndex = 13;
@@ -56,19 +56,19 @@ namespace Sistema
             this.TxtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCategoria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.TxtCategoria.Location = new System.Drawing.Point(269, 19);
+            this.TxtCategoria.Location = new System.Drawing.Point(98, 16);
             this.TxtCategoria.Name = "TxtCategoria";
-            this.TxtCategoria.Size = new System.Drawing.Size(151, 25);
+            this.TxtCategoria.Size = new System.Drawing.Size(234, 25);
             this.TxtCategoria.TabIndex = 14;
             // 
             // DgvCategoria
             // 
             this.DgvCategoria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.DgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCategoria.Location = new System.Drawing.Point(12, 150);
+            this.DgvCategoria.Location = new System.Drawing.Point(12, 115);
             this.DgvCategoria.Name = "DgvCategoria";
             this.DgvCategoria.RowTemplate.Height = 25;
-            this.DgvCategoria.Size = new System.Drawing.Size(776, 279);
+            this.DgvCategoria.Size = new System.Drawing.Size(610, 254);
             this.DgvCategoria.TabIndex = 21;
             // 
             // BtnSair
@@ -76,14 +76,14 @@ namespace Sistema
             this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.BtnSair.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.BtnSair.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSair.BorderRadius = 8;
+            this.BtnSair.BorderRadius = 6;
             this.BtnSair.BorderSize = 0;
             this.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSair.FlatAppearance.BorderSize = 0;
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnSair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSair.ForeColor = System.Drawing.Color.White;
-            this.BtnSair.Location = new System.Drawing.Point(413, 76);
+            this.BtnSair.Location = new System.Drawing.Point(242, 68);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(90, 25);
             this.BtnSair.TabIndex = 22;
@@ -96,14 +96,14 @@ namespace Sistema
             this.BtnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.BtnExcluir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.BtnExcluir.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnExcluir.BorderRadius = 8;
+            this.BtnExcluir.BorderRadius = 6;
             this.BtnExcluir.BorderSize = 0;
             this.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnExcluir.FlatAppearance.BorderSize = 0;
             this.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnExcluir.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtnExcluir.Location = new System.Drawing.Point(298, 76);
+            this.BtnExcluir.Location = new System.Drawing.Point(127, 68);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.Size = new System.Drawing.Size(90, 25);
             this.BtnExcluir.TabIndex = 23;
@@ -116,14 +116,14 @@ namespace Sistema
             this.BtnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.BtnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.BtnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnCadastrar.BorderRadius = 8;
+            this.BtnCadastrar.BorderRadius = 6;
             this.BtnCadastrar.BorderSize = 0;
             this.BtnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCadastrar.FlatAppearance.BorderSize = 0;
             this.BtnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnCadastrar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.BtnCadastrar.Location = new System.Drawing.Point(183, 76);
+            this.BtnCadastrar.Location = new System.Drawing.Point(12, 68);
             this.BtnCadastrar.Name = "BtnCadastrar";
             this.BtnCadastrar.Size = new System.Drawing.Size(90, 25);
             this.BtnCadastrar.TabIndex = 24;
@@ -136,7 +136,7 @@ namespace Sistema
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(634, 381);
             this.Controls.Add(this.BtnCadastrar);
             this.Controls.Add(this.BtnExcluir);
             this.Controls.Add(this.BtnSair);
