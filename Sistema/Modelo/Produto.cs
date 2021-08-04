@@ -1,4 +1,6 @@
 ﻿using System;
+using Sistema.Modelo;
+using Sistema.DAL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,35 +8,50 @@ using System.Threading.Tasks;
 
 namespace Sistema.Modelo
 {
-    public class Produto
+    class Produto
     {
+        public int ProdutoId { get; set; }
+        public string Nome { get; set; }
         public double Preco { get; set; }
+        public int CategoriaId { get; set; }
+        public bool Tem;
+        public string Mensagem;
 
-        private string _nome;
-
-        public string Nome
+        public Produto()
         {
-            get { return _nome; }
-            set
-            {
-                if (value != null && value.Length > 1)
-                {
-                    _nome = value;
-                }
-            }
         }
 
-        private string _categoria;
-
-        public string Categoria
+        public Produto(string nome, double preco, int categoriaId)
         {
-            get { return _categoria; }
-            set
+            Nome = nome;
+            Preco = preco;
+            CategoriaId = categoriaId;
+        }
+
+        public bool VerificarDados()
+        {
+            if (!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1 && !String.IsNullOrWhiteSpace(Preco.ToString()) && Preco > 0.0)
+                return true;
+            else
+                return false;
+        }
+
+        public string Cadastrar()
+        {
+            if (VerificarDados() == true)
             {
-                if (value != null && value.Length > 1)
+                ProdutoDao prodDao = new ProdutoDao();
+                Mensagem = prodDao.Cadastrar(Nome, Preco, CategoriaId);
+                if (prodDao.Tem)
                 {
-                    _categoria = value;
+                    this.Tem = true;
                 }
+                return Mensagem;
+            }
+            else
+            {
+                Mensagem = "Campo inválido ou vazio";
+                return Mensagem;
             }
         }
     }

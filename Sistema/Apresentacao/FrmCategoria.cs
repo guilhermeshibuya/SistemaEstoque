@@ -36,17 +36,20 @@ namespace Sistema
                 
                 DgvCategoria.DataSource = dt;
             }
-            catch (SqlException)
+            catch (Exception)
             {
-                MessageBox.Show("Erro");
+                MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            con.Desconectar();
         }
 
         private void frm_categorias_Load(object sender, EventArgs e)
         {
             ListaGrid();
-            this.DgvCategoria.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DgvCategoria.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DgvCategoria.Columns[0].HeaderText = "Código";
+            DgvCategoria.Columns[1].HeaderText = "Descrição";
+            DgvCategoria.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvCategoria.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

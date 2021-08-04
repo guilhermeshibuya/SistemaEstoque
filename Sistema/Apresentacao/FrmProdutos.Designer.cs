@@ -29,92 +29,121 @@ namespace Sistema
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutos));
-            this.txt_descricao = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txt_valor = new System.Windows.Forms.Label();
-            this.txt_categoria = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbl_descricao = new System.Windows.Forms.Label();
+            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.txt_valor = new System.Windows.Forms.TextBox();
+            this.lbl_valor = new System.Windows.Forms.Label();
+            this.lbl_categoria = new System.Windows.Forms.Label();
+            this.cmb_Categoria = new System.Windows.Forms.ComboBox();
+            this.DgvProdutos = new System.Windows.Forms.DataGridView();
             this.btn_cadastrar = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_excluir = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_descricao
+            // lbl_descricao
             // 
-            this.txt_descricao.AutoSize = true;
-            this.txt_descricao.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_descricao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txt_descricao.Location = new System.Drawing.Point(21, 15);
-            this.txt_descricao.Name = "txt_descricao";
-            this.txt_descricao.Size = new System.Drawing.Size(80, 18);
-            this.txt_descricao.TabIndex = 0;
-            this.txt_descricao.Text = "Descrição";
+            this.lbl_descricao.AutoSize = true;
+            this.lbl_descricao.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_descricao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.lbl_descricao.Location = new System.Drawing.Point(21, 15);
+            this.lbl_descricao.Name = "lbl_descricao";
+            this.lbl_descricao.Size = new System.Drawing.Size(80, 18);
+            this.lbl_descricao.TabIndex = 0;
+            this.lbl_descricao.Text = "Descrição";
             // 
-            // textBox1
+            // txt_nome
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.textBox1.Location = new System.Drawing.Point(107, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(669, 25);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.textBox2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.textBox2.Location = new System.Drawing.Point(527, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 25);
-            this.textBox2.TabIndex = 3;
+            this.txt_nome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.txt_nome.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.txt_nome.Location = new System.Drawing.Point(107, 12);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(669, 25);
+            this.txt_nome.TabIndex = 1;
             // 
             // txt_valor
             // 
-            this.txt_valor.AutoSize = true;
+            this.txt_valor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.txt_valor.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_valor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txt_valor.Location = new System.Drawing.Point(473, 59);
+            this.txt_valor.Location = new System.Drawing.Point(527, 56);
             this.txt_valor.Name = "txt_valor";
-            this.txt_valor.Size = new System.Drawing.Size(48, 18);
-            this.txt_valor.TabIndex = 2;
-            this.txt_valor.Text = "Valor";
+            this.txt_valor.Size = new System.Drawing.Size(134, 25);
+            this.txt_valor.TabIndex = 3;
             // 
-            // txt_categoria
+            // lbl_valor
             // 
-            this.txt_categoria.AutoSize = true;
-            this.txt_categoria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_categoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txt_categoria.Location = new System.Drawing.Point(21, 59);
-            this.txt_categoria.Name = "txt_categoria";
-            this.txt_categoria.Size = new System.Drawing.Size(80, 18);
-            this.txt_categoria.TabIndex = 4;
-            this.txt_categoria.Text = "Categoria";
+            this.lbl_valor.AutoSize = true;
+            this.lbl_valor.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_valor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.lbl_valor.Location = new System.Drawing.Point(473, 59);
+            this.lbl_valor.Name = "lbl_valor";
+            this.lbl_valor.Size = new System.Drawing.Size(48, 18);
+            this.lbl_valor.TabIndex = 2;
+            this.lbl_valor.Text = "Valor";
             // 
-            // comboBox1
+            // lbl_categoria
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.comboBox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(344, 26);
-            this.comboBox1.TabIndex = 5;
+            this.lbl_categoria.AutoSize = true;
+            this.lbl_categoria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_categoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.lbl_categoria.Location = new System.Drawing.Point(21, 59);
+            this.lbl_categoria.Name = "lbl_categoria";
+            this.lbl_categoria.Size = new System.Drawing.Size(80, 18);
+            this.lbl_categoria.TabIndex = 4;
+            this.lbl_categoria.Text = "Categoria";
             // 
-            // dataGridView1
+            // cmb_Categoria
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(755, 279);
-            this.dataGridView1.TabIndex = 10;
+            this.cmb_Categoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.cmb_Categoria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Categoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.cmb_Categoria.FormattingEnabled = true;
+            this.cmb_Categoria.Location = new System.Drawing.Point(107, 56);
+            this.cmb_Categoria.Name = "cmb_Categoria";
+            this.cmb_Categoria.Size = new System.Drawing.Size(344, 26);
+            this.cmb_Categoria.TabIndex = 5;
+            // 
+            // DgvProdutos
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(93)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DgvProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvProdutos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.DgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(93)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(93)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvProdutos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvProdutos.EnableHeadersVisualStyles = false;
+            this.DgvProdutos.Location = new System.Drawing.Point(21, 159);
+            this.DgvProdutos.Name = "DgvProdutos";
+            this.DgvProdutos.RowHeadersVisible = false;
+            this.DgvProdutos.RowTemplate.Height = 25;
+            this.DgvProdutos.Size = new System.Drawing.Size(755, 279);
+            this.DgvProdutos.TabIndex = 10;
             // 
             // btn_cadastrar
             // 
@@ -135,6 +164,7 @@ namespace Sistema
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.TextColor = System.Drawing.Color.White;
             this.btn_cadastrar.UseVisualStyleBackColor = false;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // btn_excluir
             // 
@@ -175,6 +205,7 @@ namespace Sistema
             this.btn_sair.Text = "Sair";
             this.btn_sair.TextColor = System.Drawing.Color.White;
             this.btn_sair.UseVisualStyleBackColor = false;
+            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
             // FrmProdutos
             // 
@@ -185,19 +216,20 @@ namespace Sistema
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_cadastrar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txt_categoria);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DgvProdutos);
+            this.Controls.Add(this.cmb_Categoria);
+            this.Controls.Add(this.lbl_categoria);
             this.Controls.Add(this.txt_valor);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txt_descricao);
+            this.Controls.Add(this.lbl_valor);
+            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.lbl_descricao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmProdutos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,13 +237,13 @@ namespace Sistema
 
         #endregion
 
-        private System.Windows.Forms.Label txt_descricao;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label txt_valor;
-        private System.Windows.Forms.Label txt_categoria;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbl_descricao;
+        private System.Windows.Forms.TextBox txt_nome;
+        private System.Windows.Forms.TextBox txt_valor;
+        private System.Windows.Forms.Label lbl_valor;
+        private System.Windows.Forms.Label lbl_categoria;
+        private System.Windows.Forms.ComboBox cmb_Categoria;
+        private System.Windows.Forms.DataGridView DgvProdutos;
         private CustomControls.RJControls.BotaoCustomizado btn_cadastrar;
         private CustomControls.RJControls.BotaoCustomizado btn_excluir;
         private CustomControls.RJControls.BotaoCustomizado btn_sair;

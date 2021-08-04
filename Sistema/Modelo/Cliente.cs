@@ -12,6 +12,7 @@ namespace Sistema.Modelo
     {
         public bool Tem;
         public string Mensagem;
+        public int ClienteId { get; set; }
 
         public Cliente()
         {

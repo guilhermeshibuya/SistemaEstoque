@@ -12,6 +12,7 @@ namespace Sistema.Modelo
     {
         public bool Tem;
         public string Mensagem;
+        public int FuncionarioId { get; set; }
 
         public Funcionario()
         {

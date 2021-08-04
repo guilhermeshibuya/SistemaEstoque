@@ -9,10 +9,11 @@ namespace Sistema.Modelo
 {
     class Categoria
     {
+        public int CategoriaId { get; set; }
+        public string Nome { get; set; }
+
         public bool Tem;
         public string Mensagem;
-
-        public string Nome { get; set; }
 
         public Categoria()
         {
