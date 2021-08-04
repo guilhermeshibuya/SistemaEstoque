@@ -42,6 +42,7 @@ namespace Sistema
             this.btn_cad_venda = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_relatorio = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
+            this.btn_cad_funcionario = new CustomControls.RJControls.BotaoCustomizado();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@ namespace Sistema
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbl_status_data});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 289);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 315);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(684, 22);
             this.statusStrip1.SizingGrip = false;
@@ -79,7 +80,7 @@ namespace Sistema
             this.btn_cad_produto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_produto.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_produto.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_produto.Location = new System.Drawing.Point(38, 38);
+            this.btn_cad_produto.Location = new System.Drawing.Point(38, 33);
             this.btn_cad_produto.Name = "btn_cad_produto";
             this.btn_cad_produto.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_produto.TabIndex = 10;
@@ -100,7 +101,7 @@ namespace Sistema
             this.btn_cad_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_categoria.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_categoria.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_categoria.Location = new System.Drawing.Point(205, 38);
+            this.btn_cad_categoria.Location = new System.Drawing.Point(205, 33);
             this.btn_cad_categoria.Name = "btn_cad_categoria";
             this.btn_cad_categoria.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_categoria.TabIndex = 11;
@@ -121,7 +122,7 @@ namespace Sistema
             this.btn_cad_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_usuario.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_usuario.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_usuario.Location = new System.Drawing.Point(373, 38);
+            this.btn_cad_usuario.Location = new System.Drawing.Point(373, 33);
             this.btn_cad_usuario.Name = "btn_cad_usuario";
             this.btn_cad_usuario.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_usuario.TabIndex = 12;
@@ -142,7 +143,7 @@ namespace Sistema
             this.btn_cad_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_cliente.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_cliente.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_cliente.Location = new System.Drawing.Point(532, 38);
+            this.btn_cad_cliente.Location = new System.Drawing.Point(532, 33);
             this.btn_cad_cliente.Name = "btn_cad_cliente";
             this.btn_cad_cliente.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_cliente.TabIndex = 13;
@@ -163,7 +164,7 @@ namespace Sistema
             this.btn_consulta_produto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_consulta_produto.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_consulta_produto.ForeColor = System.Drawing.Color.White;
-            this.btn_consulta_produto.Location = new System.Drawing.Point(38, 172);
+            this.btn_consulta_produto.Location = new System.Drawing.Point(373, 143);
             this.btn_consulta_produto.Name = "btn_consulta_produto";
             this.btn_consulta_produto.Size = new System.Drawing.Size(115, 75);
             this.btn_consulta_produto.TabIndex = 14;
@@ -183,7 +184,7 @@ namespace Sistema
             this.btn_cad_venda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_venda.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_venda.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_venda.Location = new System.Drawing.Point(214, 172);
+            this.btn_cad_venda.Location = new System.Drawing.Point(205, 143);
             this.btn_cad_venda.Name = "btn_cad_venda";
             this.btn_cad_venda.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_venda.TabIndex = 15;
@@ -203,7 +204,7 @@ namespace Sistema
             this.btn_relatorio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_relatorio.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_relatorio.ForeColor = System.Drawing.Color.White;
-            this.btn_relatorio.Location = new System.Drawing.Point(373, 172);
+            this.btn_relatorio.Location = new System.Drawing.Point(532, 143);
             this.btn_relatorio.Name = "btn_relatorio";
             this.btn_relatorio.Size = new System.Drawing.Size(115, 75);
             this.btn_relatorio.TabIndex = 16;
@@ -223,21 +224,43 @@ namespace Sistema
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_sair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_sair.ForeColor = System.Drawing.Color.White;
-            this.btn_sair.Location = new System.Drawing.Point(532, 172);
+            this.btn_sair.Location = new System.Drawing.Point(261, 248);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(115, 75);
+            this.btn_sair.Size = new System.Drawing.Size(169, 43);
             this.btn_sair.TabIndex = 17;
             this.btn_sair.Text = "Sair do Programa";
             this.btn_sair.TextColor = System.Drawing.Color.White;
             this.btn_sair.UseVisualStyleBackColor = false;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
+            // btn_cad_funcionario
+            // 
+            this.btn_cad_funcionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btn_cad_funcionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btn_cad_funcionario.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_cad_funcionario.BorderRadius = 6;
+            this.btn_cad_funcionario.BorderSize = 0;
+            this.btn_cad_funcionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cad_funcionario.FlatAppearance.BorderSize = 0;
+            this.btn_cad_funcionario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cad_funcionario.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_cad_funcionario.ForeColor = System.Drawing.Color.White;
+            this.btn_cad_funcionario.Location = new System.Drawing.Point(38, 143);
+            this.btn_cad_funcionario.Name = "btn_cad_funcionario";
+            this.btn_cad_funcionario.Size = new System.Drawing.Size(115, 75);
+            this.btn_cad_funcionario.TabIndex = 18;
+            this.btn_cad_funcionario.Text = "Cadastrar Funcionário";
+            this.btn_cad_funcionario.TextColor = System.Drawing.Color.White;
+            this.btn_cad_funcionario.UseVisualStyleBackColor = false;
+            this.btn_cad_funcionario.Click += new System.EventHandler(this.btn_cad_funcionario_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(684, 311);
+            this.ClientSize = new System.Drawing.Size(684, 337);
+            this.Controls.Add(this.btn_cad_funcionario);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_relatorio);
             this.Controls.Add(this.btn_cad_venda);
@@ -272,6 +295,7 @@ namespace Sistema
         private CustomControls.RJControls.BotaoCustomizado btn_cad_venda;
         private CustomControls.RJControls.BotaoCustomizado btn_relatorio;
         private CustomControls.RJControls.BotaoCustomizado btn_sair;
+        private CustomControls.RJControls.BotaoCustomizado btn_cad_funcionario;
     }
 }
 

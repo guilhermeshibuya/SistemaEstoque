@@ -13,8 +13,6 @@ namespace Sistema.Modelo
         public bool Tem;
         public string Mensagem;
 
-        public int IdCliente { get; set; }
-
         public Cliente()
         {
         }
@@ -23,17 +21,9 @@ namespace Sistema.Modelo
         {
         }
 
-        public int VerificarDados()
+        public override string Cadastrar()
         {
-            if ((!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1) && (!String.IsNullOrWhiteSpace(Cpf) && Cpf.Length == 14) && (!String.IsNullOrWhiteSpace(Telefone) && Telefone.Length == 19))
-                return 1;
-            else
-                return 0;
-        }
-
-        public string Cadastrar()
-        {
-            if (VerificarDados() == 1)
+            if (VerificarDados() == true)
             {
                 ClienteDao cad = new ClienteDao();
                 Mensagem = cad.Cadastrar(Nome, Telefone, Cpf);
@@ -45,7 +35,7 @@ namespace Sistema.Modelo
             }
             else
             {
-                Mensagem = "Campo Inválido ou vazio";
+                Mensagem = "Campo inválido ou vazio";
                 return Mensagem;
             }
             

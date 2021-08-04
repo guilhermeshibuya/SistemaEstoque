@@ -1,6 +1,5 @@
 ﻿using System;
 using Sistema.Modelo;
-using Sistema.DAL;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,33 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 
 namespace Sistema.Apresentacao
 {
-    public partial class FrmCliente : Form
+    public partial class FrmFuncionario : Form
     {
-        public FrmCliente()
+        public FrmFuncionario()
         {
             InitializeComponent();
         }
 
-        private void btn_cadastrar_cliente_Click(object sender, EventArgs e)
+        private void btn_cadastrar_funcionario_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(txt_nome.Text, txt_cpf.Text, txt_telefone.Text);
-            string mensagem = cliente.Cadastrar();
-            if (cliente.Tem)
+            Funcionario funcionario = new Funcionario(txt_nome.Text, txt_cpf.Text, txt_telefone.Text);
+            string mensagem = funcionario.Cadastrar();
+            if (funcionario.Tem)
             {
                 MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(cliente.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(funcionario.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             txt_nome.Text = string.Empty;
             txt_cpf.Text = string.Empty;
             txt_telefone.Text = string.Empty;
-
         }
     }
 }

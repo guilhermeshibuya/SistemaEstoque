@@ -121,6 +121,7 @@ namespace Sistema
             this.button2.Text = "Sair";
             this.button2.TextColor = System.Drawing.Color.White;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmLogin
             // 

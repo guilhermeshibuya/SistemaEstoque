@@ -61,7 +61,7 @@ namespace Sistema
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
             this.textBox1.Location = new System.Drawing.Point(107, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(681, 25);
+            this.textBox1.Size = new System.Drawing.Size(669, 25);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
@@ -110,10 +110,10 @@ namespace Sistema
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 159);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 159);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 279);
+            this.dataGridView1.Size = new System.Drawing.Size(755, 279);
             this.dataGridView1.TabIndex = 10;
             // 
             // btn_cadastrar
@@ -128,7 +128,7 @@ namespace Sistema
             this.btn_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cadastrar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.btn_cadastrar.Location = new System.Drawing.Point(21, 101);
+            this.btn_cadastrar.Location = new System.Drawing.Point(107, 101);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(130, 40);
             this.btn_cadastrar.TabIndex = 11;
@@ -148,7 +148,7 @@ namespace Sistema
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_excluir.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_excluir.ForeColor = System.Drawing.Color.White;
-            this.btn_excluir.Location = new System.Drawing.Point(177, 101);
+            this.btn_excluir.Location = new System.Drawing.Point(263, 101);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(130, 40);
             this.btn_excluir.TabIndex = 12;
@@ -168,7 +168,7 @@ namespace Sistema
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_sair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_sair.ForeColor = System.Drawing.Color.White;
-            this.btn_sair.Location = new System.Drawing.Point(330, 101);
+            this.btn_sair.Location = new System.Drawing.Point(416, 101);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(130, 40);
             this.btn_sair.TabIndex = 13;
@@ -181,7 +181,7 @@ namespace Sistema
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 450);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_cadastrar);

@@ -22,5 +22,15 @@ namespace Sistema.Modelo
             Cpf = cpf;
             Telefone = telefone;
         }
+
+        public bool VerificarDados()
+        {
+            if ((!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1) && (!String.IsNullOrWhiteSpace(Cpf) && Cpf.Length == 14) && (!String.IsNullOrWhiteSpace(Telefone) && Telefone.Length == 19))
+                return true;
+            else
+                return false;
+        }
+
+        public abstract string Cadastrar();
     }
 }

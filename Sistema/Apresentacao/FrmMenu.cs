@@ -57,5 +57,11 @@ namespace Sistema
             FrmCliente frm = new FrmCliente();
             frm.Show();
         }
+
+        private void btn_cad_funcionario_Click(object sender, EventArgs e)
+        {
+            FrmFuncionario frm = new FrmFuncionario();
+            frm.Show();
+        }
     }
 }
