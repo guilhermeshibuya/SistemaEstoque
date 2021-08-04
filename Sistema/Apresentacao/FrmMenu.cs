@@ -16,6 +16,7 @@ namespace Sistema
         public FrmMenu()
         {
             InitializeComponent();
+            statusStrip1.ForeColor = Color.FromArgb(220, 220, 221);
         }
 
         private void btn_cad_categoria_Click(object sender, EventArgs e)
@@ -30,18 +31,6 @@ namespace Sistema
             frm.Show();
         }
 
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmProdutos frm = new FrmProdutos();
-            frm.Show();
-        }
-
-        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmCategoria frm = new FrmCategoria();
-            frm.Show();
-        }
-
         private void btn_cad_usuario_Click(object sender, EventArgs e)
         {
             FrmUsuario frm = new FrmUsuario();
@@ -51,12 +40,6 @@ namespace Sistema
         private void btn_sair_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmUsuario frm = new FrmUsuario();
-            frm.Show();
         }
 
         private void frm_menu_Load(object sender, EventArgs e)

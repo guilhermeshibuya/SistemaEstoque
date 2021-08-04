@@ -23,17 +23,17 @@ namespace Sistema.Modelo
         {
         }
 
-        public bool VerificarDados()
+        public int VerificarDados()
         {
-            if ((!String.IsNullOrEmpty(Nome) && Nome.Length > 1) && (!String.IsNullOrEmpty(Cpf) && Cpf.Length == 11) && (!String.IsNullOrEmpty(Telefone) && Telefone.Length == 13))
-                return true;
+            if ((!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1) && (!String.IsNullOrWhiteSpace(Cpf) && Cpf.Length == 14) && (!String.IsNullOrWhiteSpace(Telefone) && Telefone.Length == 19))
+                return 1;
             else
-                return false;
+                return 0;
         }
 
         public string Cadastrar()
         {
-            if (VerificarDados() == true)
+            if (VerificarDados() == 1)
             {
                 ClienteDao cad = new ClienteDao();
                 Mensagem = cad.Cadastrar(Nome, Telefone, Cpf);
