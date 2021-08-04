@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Sistema.Modelo;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Sistema
 
         SqlCommand objCommand = null;
 
-        public void listaGrid()
+        public void ListaGrid()
         {
             string strSql = "select * from tb_categoria";
             Conexao con = new Conexao();
@@ -43,7 +44,31 @@ namespace Sistema
 
         private void frm_categorias_Load(object sender, EventArgs e)
         {
-            listaGrid();
+            ListaGrid();
+            this.DgvCategoria.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DgvCategoria.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria(TxtCategoria.Text);
+            string mensagem = categoria.Cadastrar();
+
+            if (categoria.Tem)
+            {
+                MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ListaGrid();
+            }
+            else
+            {
+                MessageBox.Show(categoria.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            TxtCategoria.Text = string.Empty;
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
