@@ -36,6 +36,10 @@ namespace Sistema.DAL
             {
                 Mensagem = "Erro com o banco de dados!";
             }
+            catch (Exception)
+            {
+                Mensagem = "Erro!";
+            }
 
             return Mensagem;
         }

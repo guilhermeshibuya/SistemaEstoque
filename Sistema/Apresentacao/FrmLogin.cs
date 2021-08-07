@@ -1,5 +1,6 @@
 ﻿using Sistema.Modelo;
 using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Sistema
 {
     public partial class FrmLogin : Form
     {
+        Thread t1;
         public FrmLogin()
         {
             InitializeComponent();
@@ -33,9 +35,10 @@ namespace Sistema
                 if (controle.tem)
                 {
                     MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FrmMenu frm = new FrmMenu();
-                    frm.Show();
-                    this.Hide();
+                    this.Close();
+                    t1 = new Thread(AbrirMenu);
+                    t1.SetApartmentState(ApartmentState.STA);
+                    t1.Start();
                 }
                 else
                 {
@@ -46,6 +49,11 @@ namespace Sistema
             {
                 MessageBox.Show(controle.mensagem);
             }
+        }
+
+        private void AbrirMenu(object obj)
+        {
+            Application.Run(new FrmMenu());
         }
     }
 }

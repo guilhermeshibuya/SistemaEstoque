@@ -1,6 +1,7 @@
 ﻿using System;
 using Sistema.Modelo;
 using Sistema.DAL;
+using Sistema.Modelo;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

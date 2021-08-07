@@ -10,9 +10,9 @@ namespace Sistema.Modelo
 {
     class Funcionario : Pessoa
     {
+        public int FuncionarioId { get; set; }
         public bool Tem;
         public string Mensagem;
-        public int FuncionarioId { get; set; }
 
         public Funcionario()
         {

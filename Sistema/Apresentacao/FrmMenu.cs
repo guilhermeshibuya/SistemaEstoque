@@ -44,12 +44,12 @@ namespace Sistema
 
         private void frm_menu_Load(object sender, EventArgs e)
         {
-            lbl_status_data.Text = DateTime.Now.ToString();
+            lbl_status_data.Text = DateTime.Now.ToLongDateString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbl_status_data.Text = DateTime.Now.ToString();
+            lbl_status_hora.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void btn_cad_cliente_Click(object sender, EventArgs e)

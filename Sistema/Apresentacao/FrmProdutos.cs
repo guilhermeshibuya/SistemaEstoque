@@ -36,7 +36,7 @@ namespace Sistema
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            Produto prod = new Produto(txt_nome.Text, double.Parse(txt_valor.Text), Convert.ToInt32(cmb_Categoria.SelectedValue));
+            Produto prod = new Produto(txt_nome.Text, Convert.ToDouble(txt_valor.Text), Convert.ToInt32(cmb_Categoria.SelectedValue));
             string mensagem = prod.Cadastrar();
             if (prod.Tem)
             {
@@ -49,7 +49,6 @@ namespace Sistema
             }
             txt_nome.Text = string.Empty;
             txt_valor.Text = string.Empty;
-            cmb_Categoria.SelectedItem = 0;
         }
 
         private void btn_sair_Click(object sender, EventArgs e)
@@ -68,8 +67,7 @@ namespace Sistema
                 SqlDataReader dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(dr);
-                DataRow linha = dt.NewRow();
-                dt.Rows.InsertAt(linha, 0);
+                
                 this.cmb_Categoria.DataSource = dt;
                 this.cmb_Categoria.DisplayMember = "desc_categoria";
                 this.cmb_Categoria.ValueMember = "id_categoria";

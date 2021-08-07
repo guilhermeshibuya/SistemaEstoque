@@ -112,6 +112,10 @@ namespace Sistema
             // 
             // DgvProdutos
             // 
+            this.DgvProdutos.AllowUserToAddRows = false;
+            this.DgvProdutos.AllowUserToDeleteRows = false;
+            this.DgvProdutos.AllowUserToResizeColumns = false;
+            this.DgvProdutos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
@@ -140,6 +144,7 @@ namespace Sistema
             this.DgvProdutos.EnableHeadersVisualStyles = false;
             this.DgvProdutos.Location = new System.Drawing.Point(21, 159);
             this.DgvProdutos.Name = "DgvProdutos";
+            this.DgvProdutos.ReadOnly = true;
             this.DgvProdutos.RowHeadersVisible = false;
             this.DgvProdutos.RowTemplate.Height = 25;
             this.DgvProdutos.Size = new System.Drawing.Size(755, 279);

@@ -43,6 +43,7 @@ namespace Sistema
             this.btn_relatorio = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_funcionario = new CustomControls.RJControls.BotaoCustomizado();
+            this.lbl_status_hora = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@ namespace Sistema
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_status_data});
+            this.lbl_status_data,
+            this.lbl_status_hora});
             this.statusStrip1.Location = new System.Drawing.Point(0, 315);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(684, 22);
@@ -61,7 +63,8 @@ namespace Sistema
             // lbl_status_data
             // 
             this.lbl_status_data.Name = "lbl_status_data";
-            this.lbl_status_data.Size = new System.Drawing.Size(0, 17);
+            this.lbl_status_data.Size = new System.Drawing.Size(31, 17);
+            this.lbl_status_data.Text = "Data";
             // 
             // timer1
             // 
@@ -254,6 +257,12 @@ namespace Sistema
             this.btn_cad_funcionario.UseVisualStyleBackColor = false;
             this.btn_cad_funcionario.Click += new System.EventHandler(this.btn_cad_funcionario_Click);
             // 
+            // lbl_status_hora
+            // 
+            this.lbl_status_hora.Name = "lbl_status_hora";
+            this.lbl_status_hora.Size = new System.Drawing.Size(33, 17);
+            this.lbl_status_hora.Text = "Hora";
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -296,6 +305,7 @@ namespace Sistema
         private CustomControls.RJControls.BotaoCustomizado btn_relatorio;
         private CustomControls.RJControls.BotaoCustomizado btn_sair;
         private CustomControls.RJControls.BotaoCustomizado btn_cad_funcionario;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_status_hora;
     }
 }
 
