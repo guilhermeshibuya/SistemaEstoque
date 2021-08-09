@@ -37,7 +37,7 @@ namespace Sistema
                     MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                     t1 = new Thread(AbrirMenu);
-                    t1.SetApartmentState(ApartmentState.STA);
+                    t1.SetApartmentState(ApartmentState.MTA);
                     t1.Start();
                 }
                 else
@@ -54,6 +54,11 @@ namespace Sistema
         private void AbrirMenu(object obj)
         {
             Application.Run(new FrmMenu());
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

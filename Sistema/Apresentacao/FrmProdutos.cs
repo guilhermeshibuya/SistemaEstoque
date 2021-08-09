@@ -1,5 +1,6 @@
 ﻿using System;
 using Sistema.Modelo;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Sistema.DAL;
@@ -56,21 +57,21 @@ namespace Sistema
             this.Close();
         }
 
-        Conexao con = new Conexao();
+        
         public void ListaCombo()
         {
             try
             {
-                con.Conectar();
+                Conexao con = new Conexao();
                 string strSql = "select id_categoria, desc_categoria from tb_categoria order by desc_categoria";
                 SqlCommand cmd = new SqlCommand(strSql, con.Conectar());
                 SqlDataReader dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(dr);
                 
-                this.cmb_Categoria.DataSource = dt;
-                this.cmb_Categoria.DisplayMember = "desc_categoria";
-                this.cmb_Categoria.ValueMember = "id_categoria";
+                cmb_Categoria.DataSource = dt;
+                cmb_Categoria.ValueMember = "id_categoria";
+                cmb_Categoria.DisplayMember = "desc_categoria"; 
 
                 con.Desconectar();
             }
@@ -82,6 +83,7 @@ namespace Sistema
 
         public void ListaGrid()
         {
+            Conexao con = new Conexao();
             string strSql = "select * from tb_produto";
             SqlCommand objCommand = null;
             objCommand = new SqlCommand(strSql, con.Conectar());

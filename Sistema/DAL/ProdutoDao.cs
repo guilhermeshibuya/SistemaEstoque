@@ -19,8 +19,8 @@ namespace Sistema.DAL
         {
             Tem = false;
 
-            cmd.CommandText = "insert into tb_produto values(@fk_produto, @desc_produto, @valor)";
-            cmd.Parameters.AddWithValue("@fk_produto", categoriaId);
+            cmd.CommandText = "insert into tb_produto values(@fk_cod_categoria, @desc_produto, @valor)";
+            cmd.Parameters.AddWithValue("@fk_cod_categoria", categoriaId);
             cmd.Parameters.AddWithValue("@desc_produto", nome);
             cmd.Parameters.AddWithValue("@valor", valor);
 
