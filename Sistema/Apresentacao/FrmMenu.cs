@@ -63,5 +63,11 @@ namespace Sistema
             FrmFuncionario frm = new FrmFuncionario();
             frm.Show();
         }
+
+        private void btn_consulta_produto_Click(object sender, EventArgs e)
+        {
+            FrmEstoque frm = new FrmEstoque();
+            frm.Show();
+        }
     }
 }

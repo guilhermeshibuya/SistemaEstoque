@@ -58,7 +58,7 @@ namespace Sistema
         }
 
         
-        public void ListaCombo()
+        private void ListaCombo()
         {
             try
             {
@@ -81,7 +81,7 @@ namespace Sistema
             }
         }
 
-        public void ListaGrid()
+        private void ListaGrid()
         {
             Conexao con = new Conexao();
             string strSql = "select * from tb_produto";

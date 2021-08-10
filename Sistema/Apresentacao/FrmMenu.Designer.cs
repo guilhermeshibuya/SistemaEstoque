@@ -33,6 +33,7 @@ namespace Sistema
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_status_data = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbl_status_hora = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btn_cad_produto = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_categoria = new CustomControls.RJControls.BotaoCustomizado();
@@ -43,7 +44,6 @@ namespace Sistema
             this.btn_relatorio = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_funcionario = new CustomControls.RJControls.BotaoCustomizado();
-            this.lbl_status_hora = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,12 @@ namespace Sistema
             this.lbl_status_data.Name = "lbl_status_data";
             this.lbl_status_data.Size = new System.Drawing.Size(31, 17);
             this.lbl_status_data.Text = "Data";
+            // 
+            // lbl_status_hora
+            // 
+            this.lbl_status_hora.Name = "lbl_status_hora";
+            this.lbl_status_hora.Size = new System.Drawing.Size(33, 17);
+            this.lbl_status_hora.Text = "Hora";
             // 
             // timer1
             // 
@@ -171,9 +177,10 @@ namespace Sistema
             this.btn_consulta_produto.Name = "btn_consulta_produto";
             this.btn_consulta_produto.Size = new System.Drawing.Size(115, 75);
             this.btn_consulta_produto.TabIndex = 14;
-            this.btn_consulta_produto.Text = "Consultar Produtos";
+            this.btn_consulta_produto.Text = "Consultar Estoque";
             this.btn_consulta_produto.TextColor = System.Drawing.Color.White;
             this.btn_consulta_produto.UseVisualStyleBackColor = false;
+            this.btn_consulta_produto.Click += new System.EventHandler(this.btn_consulta_produto_Click);
             // 
             // btn_cad_venda
             // 
@@ -256,12 +263,6 @@ namespace Sistema
             this.btn_cad_funcionario.TextColor = System.Drawing.Color.White;
             this.btn_cad_funcionario.UseVisualStyleBackColor = false;
             this.btn_cad_funcionario.Click += new System.EventHandler(this.btn_cad_funcionario_Click);
-            // 
-            // lbl_status_hora
-            // 
-            this.lbl_status_hora.Name = "lbl_status_hora";
-            this.lbl_status_hora.Size = new System.Drawing.Size(33, 17);
-            this.lbl_status_hora.Text = "Hora";
             // 
             // FrmMenu
             // 

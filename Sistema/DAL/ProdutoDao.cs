@@ -19,7 +19,7 @@ namespace Sistema.DAL
         {
             Tem = false;
 
-            cmd.CommandText = "insert into tb_produto values(@fk_cod_categoria, @desc_produto, @valor)";
+            cmd.CommandText = "insert into tb_produto values(@fk_cod_categoria, @desc_produto, @valor) insert into tb_estoque values(IDENT_CURRENT('tb_produto'), 0)";
             cmd.Parameters.AddWithValue("@fk_cod_categoria", categoriaId);
             cmd.Parameters.AddWithValue("@desc_produto", nome);
             cmd.Parameters.AddWithValue("@valor", valor);
