@@ -31,12 +31,6 @@ namespace Sistema
             frm.Show();
         }
 
-        private void btn_cad_usuario_Click(object sender, EventArgs e)
-        {
-            FrmUsuario frm = new FrmUsuario();
-            frm.Show();
-        }
-
         private void btn_sair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -67,6 +61,12 @@ namespace Sistema
         private void btn_consulta_produto_Click(object sender, EventArgs e)
         {
             FrmEstoque frm = new FrmEstoque();
+            frm.Show();
+        }
+
+        private void btn_cad_venda_Click(object sender, EventArgs e)
+        {
+            FrmVenda frm = new FrmVenda();
             frm.Show();
         }
     }

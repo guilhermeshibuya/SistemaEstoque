@@ -20,7 +20,7 @@ namespace Sistema.DAL
             Tem = false;
 
             cmd.CommandText = "insert into tb_categoria values(@desc_categoria)";
-            cmd.Parameters.AddWithValue("desc_categoria", nome);
+            cmd.Parameters.AddWithValue("@desc_categoria", nome);
 
             try
             {

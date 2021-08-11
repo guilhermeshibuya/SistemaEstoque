@@ -37,7 +37,6 @@ namespace Sistema
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btn_cad_produto = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_categoria = new CustomControls.RJControls.BotaoCustomizado();
-            this.btn_cad_usuario = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_cliente = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_consulta_produto = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_venda = new CustomControls.RJControls.BotaoCustomizado();
@@ -119,27 +118,6 @@ namespace Sistema
             this.btn_cad_categoria.UseVisualStyleBackColor = false;
             this.btn_cad_categoria.Click += new System.EventHandler(this.btn_cad_categoria_Click);
             // 
-            // btn_cad_usuario
-            // 
-            this.btn_cad_usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
-            this.btn_cad_usuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
-            this.btn_cad_usuario.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_cad_usuario.BorderRadius = 6;
-            this.btn_cad_usuario.BorderSize = 0;
-            this.btn_cad_usuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cad_usuario.FlatAppearance.BorderSize = 0;
-            this.btn_cad_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cad_usuario.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_cad_usuario.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_usuario.Location = new System.Drawing.Point(373, 33);
-            this.btn_cad_usuario.Name = "btn_cad_usuario";
-            this.btn_cad_usuario.Size = new System.Drawing.Size(115, 75);
-            this.btn_cad_usuario.TabIndex = 12;
-            this.btn_cad_usuario.Text = "Cadastrar Usuário";
-            this.btn_cad_usuario.TextColor = System.Drawing.Color.White;
-            this.btn_cad_usuario.UseVisualStyleBackColor = false;
-            this.btn_cad_usuario.Click += new System.EventHandler(this.btn_cad_usuario_Click);
-            // 
             // btn_cad_cliente
             // 
             this.btn_cad_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
@@ -201,6 +179,7 @@ namespace Sistema
             this.btn_cad_venda.Text = "Cadastrar Venda";
             this.btn_cad_venda.TextColor = System.Drawing.Color.White;
             this.btn_cad_venda.UseVisualStyleBackColor = false;
+            this.btn_cad_venda.Click += new System.EventHandler(this.btn_cad_venda_Click);
             // 
             // btn_relatorio
             // 
@@ -276,7 +255,6 @@ namespace Sistema
             this.Controls.Add(this.btn_cad_venda);
             this.Controls.Add(this.btn_consulta_produto);
             this.Controls.Add(this.btn_cad_cliente);
-            this.Controls.Add(this.btn_cad_usuario);
             this.Controls.Add(this.btn_cad_categoria);
             this.Controls.Add(this.btn_cad_produto);
             this.Controls.Add(this.statusStrip1);
@@ -299,7 +277,6 @@ namespace Sistema
         private System.Windows.Forms.Timer timer1;
         private CustomControls.RJControls.BotaoCustomizado btn_cad_produto;
         private CustomControls.RJControls.BotaoCustomizado btn_cad_categoria;
-        private CustomControls.RJControls.BotaoCustomizado btn_cad_usuario;
         private CustomControls.RJControls.BotaoCustomizado btn_cad_cliente;
         private CustomControls.RJControls.BotaoCustomizado btn_consulta_produto;
         private CustomControls.RJControls.BotaoCustomizado btn_cad_venda;

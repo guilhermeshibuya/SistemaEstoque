@@ -60,5 +60,11 @@ namespace Sistema
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frm = new FrmUsuario();
+            frm.Show();
+        }
     }
 }

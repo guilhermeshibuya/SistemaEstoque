@@ -8,12 +8,10 @@ namespace CustomControls.RJControls
 {
     public class BotaoCustomizado : Button
     {
-        //Fields
         private int borderSize = 0;
         private int borderRadius = 0;
         private Color borderColor = Color.PaleVioletRed;
 
-        //Properties
         [Category("RJ Code Advance")]
         public int BorderSize
         {

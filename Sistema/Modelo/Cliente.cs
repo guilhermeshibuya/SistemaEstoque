@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Modelo
 {
-    class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
         public int ClienteId { get; set; }
         public bool Tem;
@@ -16,6 +16,11 @@ namespace Sistema.Modelo
 
         public Cliente()
         {
+        }
+
+        public Cliente(int cleinteId)
+        {
+            ClienteId = cleinteId;
         }
 
         public Cliente(string nome, string cpf, string telefone) : base(nome, cpf, telefone)

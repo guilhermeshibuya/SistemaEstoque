@@ -39,8 +39,6 @@ namespace Sistema.Apresentacao
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFiltrar = new CustomControls.RJControls.BotaoCustomizado();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,35 +159,12 @@ namespace Sistema.Apresentacao
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.label3.Location = new System.Drawing.Point(12, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Quantidade";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.txtQuantidade.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtQuantidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txtQuantidade.Location = new System.Drawing.Point(138, 104);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(187, 25);
-            this.txtQuantidade.TabIndex = 8;
-            // 
             // FrmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(799, 450);
-            this.Controls.Add(this.txtQuantidade);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCategoria);
@@ -217,7 +192,5 @@ namespace Sistema.Apresentacao
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label2;
         private CustomControls.RJControls.BotaoCustomizado btnFiltrar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }

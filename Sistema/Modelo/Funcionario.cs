@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Modelo
 {
-    class Funcionario : Pessoa
+    public class Funcionario : Pessoa
     {
         public int FuncionarioId { get; set; }
         public bool Tem;
@@ -16,6 +16,11 @@ namespace Sistema.Modelo
 
         public Funcionario()
         {
+        }
+
+        public Funcionario(int funcionarioId)
+        {
+            FuncionarioId = funcionarioId;
         }
 
         public Funcionario(string nome, string cpf, string telefone) : base(nome, cpf, telefone)

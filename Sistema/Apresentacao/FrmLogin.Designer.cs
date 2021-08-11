@@ -36,6 +36,7 @@ namespace Sistema
             this.lbl_senha = new System.Windows.Forms.Label();
             this.button1 = new CustomControls.RJControls.BotaoCustomizado();
             this.button2 = new CustomControls.RJControls.BotaoCustomizado();
+            this.btnCadastrar = new CustomControls.RJControls.BotaoCustomizado();
             this.SuspendLayout();
             // 
             // lbl_login
@@ -91,9 +92,9 @@ namespace Sistema
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(86, 109);
+            this.button1.Location = new System.Drawing.Point(99, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 27);
             this.button1.TabIndex = 7;
@@ -112,9 +113,9 @@ namespace Sistema
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(194, 109);
+            this.button2.Location = new System.Drawing.Point(142, 142);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 27);
             this.button2.TabIndex = 8;
@@ -123,6 +124,26 @@ namespace Sistema
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCadastrar.BorderRadius = 6;
+            this.btnCadastrar.BorderSize = 0;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCadastrar.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Location = new System.Drawing.Point(194, 109);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(84, 27);
+            this.btnCadastrar.TabIndex = 9;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.TextColor = System.Drawing.Color.White;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -130,6 +151,7 @@ namespace Sistema
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(304, 181);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_senha);
@@ -155,5 +177,6 @@ namespace Sistema
         private System.Windows.Forms.Label lbl_senha;
         private CustomControls.RJControls.BotaoCustomizado button1;
         private CustomControls.RJControls.BotaoCustomizado button2;
+        private CustomControls.RJControls.BotaoCustomizado btnCadastrar;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Modelo
 {
-    abstract class Pessoa
+    public abstract class Pessoa
     {
         public string Nome { get; set; }
         public string Cpf { get; set; }
@@ -15,8 +15,7 @@ namespace Sistema.Modelo
         public Pessoa()
         {
         }
-
-        protected Pessoa(string nome, string cpf, string telefone)
+        public Pessoa(string nome, string cpf, string telefone)
         {
             Nome = nome;
             Cpf = cpf;

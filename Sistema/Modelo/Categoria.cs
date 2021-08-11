@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Modelo
 {
-    class Categoria
+    public class Categoria
     {
         public int CategoriaId { get; set; }
         public string Nome { get; set; }
@@ -15,9 +15,6 @@ namespace Sistema.Modelo
         public bool Tem;
         public string Mensagem;
 
-        public Categoria()
-        {
-        }
 
         public Categoria(string nome)
         {
