@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using Sistema.DAL;
 using Sistema.Modelo;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema.Apresentacao
@@ -22,10 +17,11 @@ namespace Sistema.Apresentacao
             lstProdutos.View = View.Details;
             lstProdutos.FullRowSelect = true;
 
-            lstProdutos.Columns.Add("Código estoque", 150);
-            lstProdutos.Columns.Add("Quantidade", 70);
-            lstProdutos.Columns.Add("Valor", 200);
-            lstProdutos.Columns.Add("Descrição", 354);
+            lstProdutos.Columns.Add("Código estoque", 130);
+            lstProdutos.Columns.Add("Quantidade", 100);
+            lstProdutos.Columns.Add("Valor", 100);
+            lstProdutos.Columns.Add("Descrição", 454);
+            lstProdutos.Columns.Add("Subtotal", 100);
         }
 
         private void FrmVenda_Load(object sender, EventArgs e)
@@ -41,7 +37,7 @@ namespace Sistema.Apresentacao
             {
                 if (double.Parse(txtQuantEstoque.Text) >= double.Parse(txtQuantidade.Text))
                 {
-                    ListViewItem item = new ListViewItem(new[] { cmbEstoque.SelectedValue.ToString(), txtQuantidade.Text, txtValor.Text, cmbEstoque.GetItemText(cmbEstoque.SelectedItem) });
+                    ListViewItem item = new ListViewItem(new[] { cmbEstoque.SelectedValue.ToString(), txtQuantidade.Text, txtValor.Text, cmbEstoque.GetItemText(cmbEstoque.SelectedItem), Convert.ToString(double.Parse(txtValor.Text) * int.Parse(txtQuantidade.Text)) });
                     lstProdutos.Items.Add(item);
                     cmbCliente.Enabled = false;
                     cmbFuncionario.Enabled = false;
@@ -61,35 +57,41 @@ namespace Sistema.Apresentacao
 
         private void btnVenda_Click(object sender, EventArgs e)
         {
-            Funcionario func = new Funcionario(int.Parse(cmbFuncionario.SelectedValue.ToString()));
-            Cliente cliente = new Cliente(int.Parse(cmbCliente.SelectedValue.ToString()));
-
-            List<VendaEstoque> listaVendaEstoque = new List<VendaEstoque>();
-
-            foreach (ListViewItem lst in lstProdutos.Items)
+            if (lstProdutos.Items.Count != 0)
             {
-                int codEstoque = int.Parse(lst.SubItems[0].Text);
-                int quant = int.Parse(lst.SubItems[1].Text);
-                double valor = double.Parse(lst.SubItems[2].Text);
-                VendaEstoque vendaEstoque = new VendaEstoque(codEstoque, quant, valor);
-                listaVendaEstoque.Add(vendaEstoque);
-            }
+                Funcionario func = new Funcionario(int.Parse(cmbFuncionario.SelectedValue.ToString()));
+                Cliente cliente = new Cliente(int.Parse(cmbCliente.SelectedValue.ToString()));
 
-            Venda venda = new Venda(func, cliente, DateTime.Now, listaVendaEstoque);
+                List<VendaEstoque> listaVendaEstoque = new List<VendaEstoque>();
 
-            string mensagem = venda.RealizarVenda();
-            if (venda.Tem)
+                foreach (ListViewItem lst in lstProdutos.Items)
+                {
+                    int codEstoque = int.Parse(lst.SubItems[0].Text);
+                    int quant = int.Parse(lst.SubItems[1].Text);
+                    double valor = double.Parse(lst.SubItems[2].Text);
+                    VendaEstoque vendaEstoque = new VendaEstoque(codEstoque, quant, valor);
+                    listaVendaEstoque.Add(vendaEstoque);
+                }
+
+                Venda venda = new Venda(func, cliente, DateTime.Now, listaVendaEstoque);
+
+                string mensagem = venda.RealizarVenda();
+                if (venda.Tem)
+                {
+                    MessageBox.Show(mensagem, "Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lstProdutos.Clear();
+                }
+                else
+                {
+                    MessageBox.Show(venda.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lstProdutos.Clear();
+                }
+                cmbCliente.Enabled = true;
+                cmbFuncionario.Enabled = true;
+            } else
             {
-                MessageBox.Show(mensagem, "Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lstProdutos.Clear();
+                MessageBox.Show("Não há produtos no carrinho", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show(venda.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lstProdutos.Clear();
-            }
-            cmbCliente.Enabled = true;
-            cmbFuncionario.Enabled = true;
         }
 
         private void cmbEstoque_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,6 +184,25 @@ namespace Sistema.Apresentacao
             {
                 MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lstProdutos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = lstProdutos.Columns[e.ColumnIndex].Width;
+        }
+
+        private void btnRemoverProd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lstProdutos.SelectedItems[0].Remove();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

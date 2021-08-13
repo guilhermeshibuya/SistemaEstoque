@@ -44,5 +44,55 @@ namespace Sistema.DAL
             return Mensagem;
         }
 
+        public string Deletar(int produtoId)
+        {
+            Tem = false;
+
+            cmd.CommandText = "alter table tb_estoque nocheck constraint all delete from tb_produto where cod_produto = @produtoId alter table tb_estoque check constraint all";
+            cmd.Parameters.AddWithValue("@produtoId", produtoId);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.Desconectar();
+                Mensagem = "Produto deletado com sucesso!";
+                Tem = true;
+            }
+            catch (SqlException)
+            {
+                Mensagem = "Erro com o banco de dados!";
+            }
+
+            return Mensagem;
+        }
+
+        public string Alterar(int produtoId, string nome, double valor, int categoriaId)
+        {
+            Tem = false;
+
+            cmd.CommandText = "update tb_produto set fk_cod_categoria = @categoriaId, desc_produto = @desc_produto, valor = @valor where cod_produto = @cod_produto";
+            cmd.Parameters.AddWithValue("@categoriaId", categoriaId);
+            cmd.Parameters.AddWithValue("@desc_produto", nome);
+            cmd.Parameters.AddWithValue("@valor", valor);
+            cmd.Parameters.AddWithValue("@cod_produto", produtoId);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.Desconectar();
+
+                Mensagem = "Dados alterados com sucesso!";
+                Tem = true;
+            }
+            catch (SqlException)
+            {
+                Mensagem = "Erro com o banco de dados!";
+            }
+
+            return Mensagem;
+        }
+
     }
 }

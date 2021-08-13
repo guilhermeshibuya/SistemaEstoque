@@ -1,7 +1,6 @@
 ﻿using System;
 using Sistema.Modelo;
 using Sistema.DAL;
-using Sistema.Modelo;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,31 +28,47 @@ namespace Sistema.Modelo
             CategoriaId = categoriaId;
         }
 
-        public bool VerificarDados()
+        public Produto(int produtoId, string nome, double preco, int categoriaId)
         {
-            if (!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1 && !String.IsNullOrWhiteSpace(Preco.ToString()) && Preco > 0.0)
-                return true;
-            else
-                return false;
+            ProdutoId = produtoId;
+            Nome = nome;
+            Preco = preco;
+            CategoriaId = categoriaId;
         }
 
         public string Cadastrar()
         {
-            if (VerificarDados() == true)
+            ProdutoDao prodDao = new ProdutoDao();
+            Mensagem = prodDao.Cadastrar(Nome, Preco, CategoriaId);
+            if (prodDao.Tem)
             {
-                ProdutoDao prodDao = new ProdutoDao();
-                Mensagem = prodDao.Cadastrar(Nome, Preco, CategoriaId);
-                if (prodDao.Tem)
-                {
-                    this.Tem = true;
-                }
-                return Mensagem;
+                this.Tem = true;
             }
-            else
+            return Mensagem;
+        }
+
+        public string Deletar(int produtoId)
+        {
+            ProdutoDao prodDao = new ProdutoDao();
+            Mensagem = prodDao.Deletar(produtoId);
+
+            if (prodDao.Tem)
             {
-                Mensagem = "Campo inválido ou vazio";
-                return Mensagem;
+                this.Tem = true;
             }
+            return Mensagem;
+        }
+
+        public string Alterar()
+        {
+            ProdutoDao prodDao = new ProdutoDao();
+            Mensagem = prodDao.Alterar(ProdutoId, Nome, Preco, CategoriaId);
+
+            if (prodDao.Tem)
+            {
+                this.Tem = true;
+            }
+            return Mensagem;
         }
     }
 }

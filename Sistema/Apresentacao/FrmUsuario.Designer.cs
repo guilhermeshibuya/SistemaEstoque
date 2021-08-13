@@ -145,6 +145,7 @@ namespace Sistema
             this.Name = "FrmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrao de Usuário";
+            this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

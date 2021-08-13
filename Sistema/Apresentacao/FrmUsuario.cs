@@ -26,5 +26,10 @@ namespace Sistema
             txt_senha.Text = string.Empty;
             txt_senha2.Text = string.Empty;
         }
+
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

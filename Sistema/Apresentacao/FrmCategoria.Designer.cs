@@ -41,6 +41,7 @@ namespace Sistema
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_excluir = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cadastrar = new CustomControls.RJControls.BotaoCustomizado();
+            this.btnAlterar = new CustomControls.RJControls.BotaoCustomizado();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +99,7 @@ namespace Sistema
             this.DgvCategoria.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvCategoria.EnableHeadersVisualStyles = false;
             this.DgvCategoria.Location = new System.Drawing.Point(12, 115);
+            this.DgvCategoria.MultiSelect = false;
             this.DgvCategoria.Name = "DgvCategoria";
             this.DgvCategoria.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -116,8 +118,10 @@ namespace Sistema
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.DgvCategoria.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvCategoria.RowTemplate.Height = 25;
+            this.DgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvCategoria.Size = new System.Drawing.Size(610, 254);
             this.DgvCategoria.TabIndex = 21;
+            this.DgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCategoria_CellClick);
             // 
             // btn_sair
             // 
@@ -131,7 +135,7 @@ namespace Sistema
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_sair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_sair.ForeColor = System.Drawing.Color.White;
-            this.btn_sair.Location = new System.Drawing.Point(242, 68);
+            this.btn_sair.Location = new System.Drawing.Point(356, 68);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(90, 25);
             this.btn_sair.TabIndex = 22;
@@ -159,6 +163,7 @@ namespace Sistema
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.TextColor = System.Drawing.Color.White;
             this.btn_excluir.UseVisualStyleBackColor = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_cadastrar
             // 
@@ -181,12 +186,34 @@ namespace Sistema
             this.btn_cadastrar.UseVisualStyleBackColor = false;
             this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnAlterar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnAlterar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAlterar.BorderRadius = 6;
+            this.btnAlterar.BorderSize = 0;
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAlterar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
+            this.btnAlterar.Location = new System.Drawing.Point(242, 68);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(90, 25);
+            this.btnAlterar.TabIndex = 25;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextColor = System.Drawing.Color.White;
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(634, 381);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_sair);
@@ -213,5 +240,6 @@ namespace Sistema
         private CustomControls.RJControls.BotaoCustomizado btn_sair;
         private CustomControls.RJControls.BotaoCustomizado btn_excluir;
         private CustomControls.RJControls.BotaoCustomizado btn_cadastrar;
+        private CustomControls.RJControls.BotaoCustomizado btnAlterar;
     }
 }

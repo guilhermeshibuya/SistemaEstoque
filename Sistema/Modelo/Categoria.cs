@@ -15,37 +15,54 @@ namespace Sistema.Modelo
         public bool Tem;
         public string Mensagem;
 
+        public Categoria()
+        {
+        }
 
         public Categoria(string nome)
         {
             Nome = nome;
         }
 
-        public bool VerificarNome()
+        public Categoria(int categoriaId, string nome)
         {
-            if (!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1)
-                return true;
-            else
-                return false;
+            CategoriaId = categoriaId;
+            Nome = nome;
         }
 
         public string Cadastrar()
         {
-            if (VerificarNome() == true)
+            CategoriaDao catDao = new CategoriaDao();
+            Mensagem = catDao.Cadastrar(Nome);
+            if (catDao.Tem)
             {
-                CategoriaDao catDao = new CategoriaDao();
-                Mensagem = catDao.Cadastrar(Nome);
-                if (catDao.Tem)
-                {
-                    this.Tem = true;
-                }
-                return Mensagem;
+                this.Tem = true;
             }
-            else
+            return Mensagem;
+        }
+
+        public string Deletar(int categoriaId)
+        {
+            CategoriaDao catDao = new CategoriaDao();
+            Mensagem = catDao.Deletar(categoriaId);
+
+            if (catDao.Tem)
             {
-                Mensagem = "Campo inválido ou vazio";
-                return Mensagem;
+                this.Tem = true;
             }
+            return Mensagem;
+        }
+
+        public string Alterar()
+        {
+            CategoriaDao catDao = new CategoriaDao();
+            Mensagem = catDao.Alterar(CategoriaId, Nome);
+
+            if (catDao.Tem)
+            {
+                this.Tem = true;
+            }
+            return Mensagem;
         }
 
 

@@ -8,7 +8,6 @@ namespace Sistema.Modelo
 {
     public class VendaEstoque
     {
-        public Venda Venda { get; set; } = new Venda();
         public int CodEstoque { get; set; }
         public int Quantidade { get; set; }
         public double Valor { get; set; }
@@ -17,7 +16,7 @@ namespace Sistema.Modelo
         {
             CodEstoque = codEstoque;
             Quantidade = quantidade;
-            Valor = valor;
+            Valor = valor * quantidade;
         }
     }
 }
