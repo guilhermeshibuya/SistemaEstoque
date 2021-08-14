@@ -18,13 +18,18 @@ namespace Sistema.Modelo
         {
         }
 
-        public Cliente(int cleinteId)
+        public Cliente(int clienteId)
         {
-            ClienteId = cleinteId;
+            ClienteId = clienteId;
         }
 
         public Cliente(string nome, string cpf, string telefone) : base(nome, cpf, telefone)
         {
+        }
+
+        public Cliente(int clienteId, string nome, string cpf, string telefone) : base(nome, cpf, telefone)
+        {
+            ClienteId = clienteId;
         }
 
         public override string Cadastrar()
@@ -45,6 +50,40 @@ namespace Sistema.Modelo
                 return Mensagem;
             }
             
+        }
+
+        public string Deletar()
+        {
+            ClienteDao clienteDao = new ClienteDao();
+            Mensagem = clienteDao.Deletar(ClienteId);
+
+            if (clienteDao.Tem)
+            {
+                this.Tem = true;
+            }
+
+            return Mensagem;
+        }
+
+        public string Alterar()
+        {
+            if (VerificarDados() == true)
+            {
+                ClienteDao clienteDao = new ClienteDao();
+                Mensagem = clienteDao.Alterar(ClienteId, Nome, Telefone, Cpf);
+
+                if (clienteDao.Tem)
+                {
+                    this.Tem = true;
+                }
+
+                return Mensagem;
+            }
+            else
+            {
+                Mensagem = "Campo inválido ou vazio";
+                return Mensagem;
+            }
         }
     }
 }

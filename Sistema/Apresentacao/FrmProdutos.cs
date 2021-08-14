@@ -185,5 +185,14 @@ namespace Sistema
             }
             con.Desconectar();
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txt_nome.Text = string.Empty;
+            txt_valor.Text = string.Empty;
+            DgvProdutos.CurrentCell = null;
+            DgvProdutos.ClearSelection();
+            cmb_Categoria.SelectedItem = cmb_Categoria.Items[0];
+        }
     }
 }

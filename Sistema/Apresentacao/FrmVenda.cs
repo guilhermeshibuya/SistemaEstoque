@@ -37,7 +37,7 @@ namespace Sistema.Apresentacao
             {
                 if (double.Parse(txtQuantEstoque.Text) >= double.Parse(txtQuantidade.Text))
                 {
-                    ListViewItem item = new ListViewItem(new[] { cmbEstoque.SelectedValue.ToString(), txtQuantidade.Text, txtValor.Text, cmbEstoque.GetItemText(cmbEstoque.SelectedItem), Convert.ToString(double.Parse(txtValor.Text) * int.Parse(txtQuantidade.Text)) });
+                    ListViewItem item = new ListViewItem(new[] { cmbEstoque.SelectedValue.ToString(), txtQuantidade.Text, txtValor.Text, cmbEstoque.GetItemText(cmbEstoque.SelectedItem), (double.Parse(txtValor.Text) * int.Parse(txtQuantidade.Text)).ToString("F2") });
                     lstProdutos.Items.Add(item);
                     cmbCliente.Enabled = false;
                     cmbFuncionario.Enabled = false;
@@ -83,12 +83,13 @@ namespace Sistema.Apresentacao
                 }
                 else
                 {
-                    MessageBox.Show(venda.Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lstProdutos.Clear();
                 }
                 cmbCliente.Enabled = true;
                 cmbFuncionario.Enabled = true;
-            } else
+            }
+            else
             {
                 MessageBox.Show("Não há produtos no carrinho", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -200,9 +201,13 @@ namespace Sistema.Apresentacao
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nenhum produto selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

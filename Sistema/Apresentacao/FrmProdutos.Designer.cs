@@ -44,6 +44,7 @@ namespace Sistema
             this.btn_excluir = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
             this.btnAlterar = new CustomControls.RJControls.BotaoCustomizado();
+            this.btnLimpar = new CustomControls.RJControls.BotaoCustomizado();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +167,7 @@ namespace Sistema
             this.btn_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cadastrar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.btn_cadastrar.Location = new System.Drawing.Point(107, 101);
+            this.btn_cadastrar.Location = new System.Drawing.Point(21, 101);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(130, 40);
             this.btn_cadastrar.TabIndex = 11;
@@ -187,7 +188,7 @@ namespace Sistema
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_excluir.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_excluir.ForeColor = System.Drawing.Color.White;
-            this.btn_excluir.Location = new System.Drawing.Point(263, 101);
+            this.btn_excluir.Location = new System.Drawing.Point(341, 101);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(130, 40);
             this.btn_excluir.TabIndex = 12;
@@ -208,7 +209,7 @@ namespace Sistema
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_sair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_sair.ForeColor = System.Drawing.Color.White;
-            this.btn_sair.Location = new System.Drawing.Point(585, 101);
+            this.btn_sair.Location = new System.Drawing.Point(646, 101);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(130, 40);
             this.btn_sair.TabIndex = 13;
@@ -229,7 +230,7 @@ namespace Sistema
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlterar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(426, 101);
+            this.btnAlterar.Location = new System.Drawing.Point(183, 101);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(130, 40);
             this.btnAlterar.TabIndex = 14;
@@ -238,12 +239,34 @@ namespace Sistema
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnLimpar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnLimpar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLimpar.BorderRadius = 6;
+            this.btnLimpar.BorderSize = 0;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderSize = 0;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(495, 101);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(130, 40);
+            this.btnLimpar.TabIndex = 15;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextColor = System.Drawing.Color.White;
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_excluir);
@@ -280,5 +303,6 @@ namespace Sistema
         private CustomControls.RJControls.BotaoCustomizado btn_excluir;
         private CustomControls.RJControls.BotaoCustomizado btn_sair;
         private CustomControls.RJControls.BotaoCustomizado btnAlterar;
+        private CustomControls.RJControls.BotaoCustomizado btnLimpar;
     }
 }

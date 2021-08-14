@@ -138,5 +138,13 @@ namespace Sistema
             string descricao = DgvCategoria.Rows[DgvCategoria.CurrentRow.Index].Cells[1].Value.ToString();
             TxtCategoria.Text = descricao;
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            TxtCategoria.Text = string.Empty;
+            DgvCategoria.CurrentCell = null;
+            DgvCategoria.ClearSelection();
+            DgvCategoria.CurrentCell = null;
+        }
     }
 }

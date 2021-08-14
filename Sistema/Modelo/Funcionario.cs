@@ -27,6 +27,11 @@ namespace Sistema.Modelo
         {
         }
 
+        public Funcionario(int funcionarioId, string nome, string cpf, string telefone) : base(nome, cpf, telefone)
+        {
+            FuncionarioId = funcionarioId;
+        }
+
         public override string Cadastrar()
         {
             if (VerificarDados() == true)
@@ -46,6 +51,38 @@ namespace Sistema.Modelo
             }
         }
 
+        public string Alterar()
+        {
+            if (VerificarDados() == true)
+            {
+                FuncionarioDao funcionarioDao = new FuncionarioDao();
+                Mensagem = funcionarioDao.Alterar(FuncionarioId, Nome, Telefone, Cpf);
 
+                if (funcionarioDao.Tem)
+                {
+                    this.Tem = true;
+                }
+
+                return Mensagem;
+            }
+            else
+            {
+                Mensagem = "Campo inválido ou vazio";
+                return Mensagem;
+            }
+        }
+
+        public string Deletar()
+        {
+            FuncionarioDao funcionarioDao = new FuncionarioDao();
+            Mensagem = funcionarioDao.Deletar(FuncionarioId);
+
+            if (funcionarioDao.Tem)
+            {
+                this.Tem = true;
+            }
+
+            return Mensagem;
+        }
     }
 }

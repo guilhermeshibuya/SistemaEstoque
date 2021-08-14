@@ -94,7 +94,7 @@ namespace Sistema
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(99, 109);
+            this.button1.Location = new System.Drawing.Point(99, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 27);
             this.button1.TabIndex = 7;
@@ -135,7 +135,7 @@ namespace Sistema
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrar.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(194, 109);
+            this.btnCadastrar.Location = new System.Drawing.Point(194, 105);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(84, 27);
             this.btnCadastrar.TabIndex = 9;

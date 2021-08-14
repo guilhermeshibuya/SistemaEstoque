@@ -29,6 +29,7 @@ namespace Sistema.Apresentacao
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenda));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -45,6 +46,7 @@ namespace Sistema.Apresentacao
             this.txtQuantEstoque = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRemoverProd = new CustomControls.RJControls.BotaoCustomizado();
+            this.btnSair = new CustomControls.RJControls.BotaoCustomizado();
             this.SuspendLayout();
             // 
             // label1
@@ -148,8 +150,8 @@ namespace Sistema.Apresentacao
             // 
             // btnAdcProd
             // 
-            this.btnAdcProd.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAdcProd.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAdcProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnAdcProd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.btnAdcProd.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnAdcProd.BorderRadius = 6;
             this.btnAdcProd.BorderSize = 0;
@@ -169,8 +171,8 @@ namespace Sistema.Apresentacao
             // 
             // btnVenda
             // 
-            this.btnVenda.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnVenda.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnVenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.btnVenda.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnVenda.BorderRadius = 6;
             this.btnVenda.BorderSize = 0;
@@ -232,8 +234,8 @@ namespace Sistema.Apresentacao
             // 
             // btnRemoverProd
             // 
-            this.btnRemoverProd.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnRemoverProd.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnRemoverProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnRemoverProd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
             this.btnRemoverProd.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnRemoverProd.BorderRadius = 6;
             this.btnRemoverProd.BorderSize = 0;
@@ -251,12 +253,34 @@ namespace Sistema.Apresentacao
             this.btnRemoverProd.UseVisualStyleBackColor = false;
             this.btnRemoverProd.Click += new System.EventHandler(this.btnRemoverProd_Click);
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnSair.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnSair.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSair.BorderRadius = 6;
+            this.btnSair.BorderSize = 0;
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(727, 172);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(173, 43);
+            this.btnSair.TabIndex = 25;
+            this.btnSair.Text = "Sair";
+            this.btnSair.TextColor = System.Drawing.Color.White;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(914, 540);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnRemoverProd);
             this.Controls.Add(this.txtQuantEstoque);
             this.Controls.Add(this.label6);
@@ -275,6 +299,7 @@ namespace Sistema.Apresentacao
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -303,5 +328,6 @@ namespace Sistema.Apresentacao
         private System.Windows.Forms.TextBox txtQuantEstoque;
         private System.Windows.Forms.Label label6;
         private CustomControls.RJControls.BotaoCustomizado btnRemoverProd;
+        private CustomControls.RJControls.BotaoCustomizado btnSair;
     }
 }

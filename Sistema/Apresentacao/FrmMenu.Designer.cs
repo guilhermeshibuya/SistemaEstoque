@@ -43,6 +43,7 @@ namespace Sistema
             this.btn_relatorio = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_sair = new CustomControls.RJControls.BotaoCustomizado();
             this.btn_cad_funcionario = new CustomControls.RJControls.BotaoCustomizado();
+            this.btnCompra = new CustomControls.RJControls.BotaoCustomizado();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +152,7 @@ namespace Sistema
             this.btn_consulta_produto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_consulta_produto.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_consulta_produto.ForeColor = System.Drawing.Color.White;
-            this.btn_consulta_produto.Location = new System.Drawing.Point(373, 143);
+            this.btn_consulta_produto.Location = new System.Drawing.Point(369, 143);
             this.btn_consulta_produto.Name = "btn_consulta_produto";
             this.btn_consulta_produto.Size = new System.Drawing.Size(115, 75);
             this.btn_consulta_produto.TabIndex = 14;
@@ -172,11 +173,11 @@ namespace Sistema
             this.btn_cad_venda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_venda.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_venda.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_venda.Location = new System.Drawing.Point(205, 143);
+            this.btn_cad_venda.Location = new System.Drawing.Point(38, 143);
             this.btn_cad_venda.Name = "btn_cad_venda";
             this.btn_cad_venda.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_venda.TabIndex = 15;
-            this.btn_cad_venda.Text = "Cadastrar Venda";
+            this.btn_cad_venda.Text = "Venda";
             this.btn_cad_venda.TextColor = System.Drawing.Color.White;
             this.btn_cad_venda.UseVisualStyleBackColor = false;
             this.btn_cad_venda.Click += new System.EventHandler(this.btn_cad_venda_Click);
@@ -234,7 +235,7 @@ namespace Sistema
             this.btn_cad_funcionario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cad_funcionario.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cad_funcionario.ForeColor = System.Drawing.Color.White;
-            this.btn_cad_funcionario.Location = new System.Drawing.Point(38, 143);
+            this.btn_cad_funcionario.Location = new System.Drawing.Point(369, 33);
             this.btn_cad_funcionario.Name = "btn_cad_funcionario";
             this.btn_cad_funcionario.Size = new System.Drawing.Size(115, 75);
             this.btn_cad_funcionario.TabIndex = 18;
@@ -243,12 +244,34 @@ namespace Sistema
             this.btn_cad_funcionario.UseVisualStyleBackColor = false;
             this.btn_cad_funcionario.Click += new System.EventHandler(this.btn_cad_funcionario_Click);
             // 
+            // btnCompra
+            // 
+            this.btnCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnCompra.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCompra.BorderRadius = 6;
+            this.btnCompra.BorderSize = 0;
+            this.btnCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompra.FlatAppearance.BorderSize = 0;
+            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompra.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCompra.Location = new System.Drawing.Point(205, 143);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(115, 75);
+            this.btnCompra.TabIndex = 19;
+            this.btnCompra.Text = "Compra";
+            this.btnCompra.TextColor = System.Drawing.Color.White;
+            this.btnCompra.UseVisualStyleBackColor = false;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(684, 337);
+            this.Controls.Add(this.btnCompra);
             this.Controls.Add(this.btn_cad_funcionario);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_relatorio);
@@ -284,6 +307,7 @@ namespace Sistema
         private CustomControls.RJControls.BotaoCustomizado btn_sair;
         private CustomControls.RJControls.BotaoCustomizado btn_cad_funcionario;
         private System.Windows.Forms.ToolStripStatusLabel lbl_status_hora;
+        private CustomControls.RJControls.BotaoCustomizado btnCompra;
     }
 }
 
