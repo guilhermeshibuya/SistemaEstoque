@@ -75,5 +75,11 @@ namespace Sistema
             FrmCompra frm = new FrmCompra();
             frm.Show();
         }
+
+        private void btn_relatorio_Click(object sender, EventArgs e)
+        {
+            FrmEntradaSaida frm = new FrmEntradaSaida();
+            frm.Show();
+        }
     }
 }

@@ -198,9 +198,10 @@ namespace Sistema
             this.btn_relatorio.Name = "btn_relatorio";
             this.btn_relatorio.Size = new System.Drawing.Size(115, 75);
             this.btn_relatorio.TabIndex = 16;
-            this.btn_relatorio.Text = "Relatório de Vendas";
+            this.btn_relatorio.Text = "Relatório de Entrada / Saída";
             this.btn_relatorio.TextColor = System.Drawing.Color.White;
             this.btn_relatorio.UseVisualStyleBackColor = false;
+            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
             // 
             // btn_sair
             // 
