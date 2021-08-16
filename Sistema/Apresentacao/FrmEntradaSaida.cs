@@ -167,42 +167,51 @@ namespace Sistema.Apresentacao
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-            Document doc = new Document(PageSize.A4);
-            doc.SetMargins(20, 20, 20, 40);
-            string caminho = @"C:\Users\guilh\Documents\" + "relatorio.pdf";
-
-            PdfWriter wrtiter = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
-
-            doc.Open();
-
-            Paragraph titulo = new Paragraph();
-            titulo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 30);
-            titulo.Alignment = Element.ALIGN_CENTER;
-            titulo.Add("Relatório\n\n");
-            doc.Add(titulo);
-
-            iTextSharp.text.Font fonte = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10);
-
-            PdfPTable tabela = new PdfPTable(5);
-            float[] widths = new float[] { 0.5f, 0.5f, 0.8f, 1f, 4f};
-            tabela.AddCell(new PdfPCell(new Phrase("Código", fonte)));
-            tabela.AddCell(new PdfPCell(new Phrase("Tipo", fonte)));
-            tabela.AddCell(new PdfPCell(new Phrase("Quantidade", fonte)));
-            tabela.AddCell(new PdfPCell(new Phrase("Data", fonte)));
-            tabela.AddCell(new PdfPCell(new Phrase("Descrição", fonte)));
-            tabela.SetWidths(widths);
-
-            foreach (DataGridViewRow linha in dataGridView1.Rows)
+            try
             {
-                tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[0].Value.ToString(), fonte)));
-                tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[1].Value.ToString(), fonte)));
-                tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[2].Value.ToString(), fonte)));
-                tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[3].Value.ToString(), fonte)));
-                tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[4].Value.ToString(), fonte)));
-            }
+                Document doc = new Document(PageSize.A4);
+                doc.SetMargins(20, 20, 20, 40);
+                string caminho = @"C:\Users\guilh\Documents\" + "relatorio.pdf";
 
-            doc.Add(tabela);
-            doc.Close();
+                PdfWriter wrtiter = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+
+                doc.Open();
+
+                Paragraph titulo = new Paragraph();
+                titulo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 30);
+                titulo.Alignment = Element.ALIGN_CENTER;
+                titulo.Add("Relatório\n\n");
+                doc.Add(titulo);
+
+                iTextSharp.text.Font fonte = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10);
+
+                PdfPTable tabela = new PdfPTable(5);
+                float[] widths = new float[] { 0.6f, 0.5f, 0.8f, 1f, 4f };
+                tabela.AddCell(new PdfPCell(new Phrase("Código", fonte)));
+                tabela.AddCell(new PdfPCell(new Phrase("Tipo", fonte)));
+                tabela.AddCell(new PdfPCell(new Phrase("Quantidade", fonte)));
+                tabela.AddCell(new PdfPCell(new Phrase("Data", fonte)));
+                tabela.AddCell(new PdfPCell(new Phrase("Descrição", fonte)));
+                tabela.SetWidths(widths);
+
+                foreach (DataGridViewRow linha in dataGridView1.Rows)
+                {
+                    tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[0].Value.ToString(), fonte)));
+                    tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[1].Value.ToString(), fonte)));
+                    tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[2].Value.ToString(), fonte)));
+                    tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[3].Value.ToString(), fonte)));
+                    tabela.AddCell(new PdfPCell(new Phrase(linha.Cells[4].Value.ToString(), fonte)));
+                }
+
+                doc.Add(tabela);
+                doc.Close();
+
+                MessageBox.Show("Relatório gerado com sucesso!", "Relatório", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

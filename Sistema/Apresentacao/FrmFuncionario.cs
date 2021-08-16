@@ -46,6 +46,7 @@ namespace Sistema.Apresentacao
             if (funcionario.Tem)
             {
                 MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Lista();
             }
             else
             {

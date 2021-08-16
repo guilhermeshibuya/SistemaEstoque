@@ -259,6 +259,7 @@ namespace Sistema.Apresentacao
             this.Controls.Add(this.lbl_telefone);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
