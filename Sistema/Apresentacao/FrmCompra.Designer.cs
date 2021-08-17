@@ -59,6 +59,7 @@ namespace Sistema.Apresentacao
             // cmbFornecedor
             // 
             this.cmbFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.cmbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFornecedor.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
             this.cmbFornecedor.FormattingEnabled = true;
@@ -81,6 +82,7 @@ namespace Sistema.Apresentacao
             // cmbEstoque
             // 
             this.cmbEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.cmbEstoque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstoque.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
             this.cmbEstoque.FormattingEnabled = true;

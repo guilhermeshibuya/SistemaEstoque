@@ -62,6 +62,7 @@ namespace Sistema.Apresentacao
             // cmbFuncionario
             // 
             this.cmbFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.cmbFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
             this.cmbFuncionario.FormattingEnabled = true;
             this.cmbFuncionario.Location = new System.Drawing.Point(130, 13);
@@ -73,6 +74,7 @@ namespace Sistema.Apresentacao
             // cmbCliente
             // 
             this.cmbCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
             this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(575, 13);
@@ -94,6 +96,7 @@ namespace Sistema.Apresentacao
             // cmbEstoque
             // 
             this.cmbEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.cmbEstoque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
             this.cmbEstoque.FormattingEnabled = true;
             this.cmbEstoque.Location = new System.Drawing.Point(130, 70);

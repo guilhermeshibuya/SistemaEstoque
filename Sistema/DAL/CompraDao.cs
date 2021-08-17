@@ -38,7 +38,7 @@ namespace Sistema.DAL
             {
                 cmd2.CommandText = "insert into tb_compra_estoque values(@fk_cod_estoque, IDENT_CURRENT('tb_compra'), @quantidade, @valor) " +
                     "update tb_estoque set quantidade = quantidade + @quantidade where cod_estoque = @fk_cod_estoque " +
-                    "insert into tb_entrada_saida values(@fk_cod_estoque, 'E', @quantidade, @data)";
+                    "insert into tb_entrada_saida values(@fk_cod_estoque, 'E', @quantidade, @data, @valor)";
                 cmd2.Parameters.AddWithValue("@fk_cod_estoque", item.EstoqueId);
                 cmd2.Parameters.AddWithValue("@quantidade", item.Quantidade);
                 cmd2.Parameters.AddWithValue("@valor", item.Valor);
