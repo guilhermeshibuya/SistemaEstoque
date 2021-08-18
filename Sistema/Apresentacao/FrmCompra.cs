@@ -37,7 +37,10 @@ namespace Sistema.Apresentacao
 
         private void btnAdcProd_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(txtQuantidade.Text))
+            int resultado;
+            bool verificar = Int32.TryParse(txtQuantidade.Text, out resultado);
+
+            if (!String.IsNullOrWhiteSpace(txtQuantidade.Text) && verificar && resultado > 0)
             {
                 ListViewItem item = new ListViewItem(new[] { cmbEstoque.SelectedValue.ToString(), txtQuantidade.Text, txtValor.Text, cmbEstoque.GetItemText(cmbEstoque.SelectedItem), (double.Parse(txtValor.Text) * int.Parse(txtQuantidade.Text)).ToString("F2") });
                 lstProdutos.Items.Add(item);
@@ -88,12 +91,12 @@ namespace Sistema.Apresentacao
                 if (compra.Tem)
                 {
                     MessageBox.Show(mensagem, "Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lstProdutos.Clear();
+                    lstProdutos.Items.Clear();
                 }
                 else
                 {
                     MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    lstProdutos.Clear();
+                    lstProdutos.Items.Clear();
                 }
                 cmbFornecedor.Enabled = true;
             }

@@ -133,7 +133,7 @@ namespace Sistema.Apresentacao
             }
             else
             {
-                MessageBox.Show("Insira um ano!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Insira um ano válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -174,7 +174,7 @@ namespace Sistema.Apresentacao
             try
             {
                 Document doc = new Document(PageSize.A4);
-                doc.SetMargins(20, 20, 20, 40);
+                doc.SetMargins(15, 15, 15, 40);
                 string caminho = @"C:\Users\guilh\Documents\" + "relatorio.pdf";
 
                 PdfWriter wrtiter = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -190,7 +190,7 @@ namespace Sistema.Apresentacao
                 iTextSharp.text.Font fonte = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10);
 
                 PdfPTable tabela = new PdfPTable(6);
-                float[] widths = new float[] { 0.6f, 0.5f, 0.8f, 1f, 1f, 4f };
+                float[] widths = new float[] { 0.6f, 0.5f, 0.9f, 1f, 1f, 4f };
                 tabela.AddCell(new PdfPCell(new Phrase("Código", fonte)));
                 tabela.AddCell(new PdfPCell(new Phrase("Tipo", fonte)));
                 tabela.AddCell(new PdfPCell(new Phrase("Quantidade", fonte)));

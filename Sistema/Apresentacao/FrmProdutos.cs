@@ -1,15 +1,8 @@
 ﻿using System;
 using Sistema.Modelo;
-using System.Globalization;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using Sistema.DAL;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema
@@ -44,7 +37,9 @@ namespace Sistema
             if (!String.IsNullOrWhiteSpace(txt_nome.Text) && txt_nome.Text.Length > 1 
                 && !String.IsNullOrWhiteSpace(txt_valor.Text))
             {
-                if (double.Parse(txt_valor.Text) > 0)
+                double resultado;
+                bool verificar = Double.TryParse(txt_valor.Text, out resultado);
+                if (verificar && resultado > 0)
                 {
                     Produto prod = new Produto(txt_nome.Text, Convert.ToDouble(txt_valor.Text), Convert.ToInt32(cmb_Categoria.SelectedValue));
                     string mensagem = prod.Cadastrar();

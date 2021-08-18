@@ -24,7 +24,9 @@ namespace Sistema.Modelo
 
         public bool VerificarDados()
         {
-            if ((!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1) && (!String.IsNullOrWhiteSpace(Cpf) && Cpf.Length == 14) && (!String.IsNullOrWhiteSpace(Telefone) && Telefone.Length == 19))
+            if ((!String.IsNullOrWhiteSpace(Nome) && Nome.Length > 1) 
+                && (!String.IsNullOrWhiteSpace(Cpf) && Cpf.Length == 14) 
+                && (!String.IsNullOrWhiteSpace(Telefone) && Telefone.Length == 19) && !Nome.All(char.IsDigit))
                 return true;
             else
                 return false;

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using Sistema.Modelo;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema.DAL;
 
@@ -73,7 +67,7 @@ namespace Sistema
             }
             else
             {
-                MessageBox.Show("Campo vazio ou inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo vazio ou inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             TxtCategoria.Text = string.Empty;
         }

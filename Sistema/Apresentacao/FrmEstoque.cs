@@ -45,27 +45,37 @@ namespace Sistema.Apresentacao
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Conexao con = new Conexao();
-            string strSql = "select cod_estoque, fk_cod_produto, quantidade, prod.desc_produto, prod.valor " +
-                "from tb_estoque est " +
-                "join tb_produto prod " +
-                "on est.fk_cod_produto = prod.cod_produto where cod_estoque = '" + int.Parse(txtCodigo.Text) + "'";
-            SqlCommand objCommand = null;
-            objCommand = new SqlCommand(strSql, con.Conectar());
+            int resultado;
+            bool verificar = Int32.TryParse(txtCodigo.Text, out resultado);
 
-            try
+            if (!String.IsNullOrWhiteSpace(txtCodigo.Text) && verificar && resultado > 0)
             {
-                SqlDataAdapter objAdp = new SqlDataAdapter(objCommand);
-                DataTable dt = new DataTable();
-                objAdp.Fill(dt);
+                Conexao con = new Conexao();
+                string strSql = "select cod_estoque, fk_cod_produto, quantidade, prod.desc_produto, prod.valor " +
+                    "from tb_estoque est " +
+                    "join tb_produto prod " +
+                    "on est.fk_cod_produto = prod.cod_produto where cod_estoque = '" + resultado + "'";
+                SqlCommand objCommand = null;
+                objCommand = new SqlCommand(strSql, con.Conectar());
 
-                dgvEstoque.DataSource = dt;
+                try
+                {
+                    SqlDataAdapter objAdp = new SqlDataAdapter(objCommand);
+                    DataTable dt = new DataTable();
+                    objAdp.Fill(dt);
+
+                    dgvEstoque.DataSource = dt;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                con.Desconectar();
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Ocorreu um erro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            con.Desconectar();
+                MessageBox.Show("Insira um código válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
