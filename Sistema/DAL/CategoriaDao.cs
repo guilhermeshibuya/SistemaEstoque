@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Sistema.Modelo;
-using System.Linq;
-using System.Data.SqlClient;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace Sistema.DAL
 {

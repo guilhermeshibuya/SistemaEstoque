@@ -1,9 +1,4 @@
-﻿using System;
-using Sistema.DAL;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Sistema.DAL;
 
 namespace Sistema.Modelo
 {
