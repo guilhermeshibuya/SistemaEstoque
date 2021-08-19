@@ -79,19 +79,22 @@ namespace Sistema
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            int categoriaId = int.Parse(DgvCategoria.Rows[DgvCategoria.CurrentRow.Index].Cells[0].Value.ToString());
-
-            Categoria categoria = new Categoria();
-            string mensagem = categoria.Deletar(categoriaId);
-
-            if (categoria.Tem)
+            if (MessageBox.Show("Deseja excluir a categoria selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ListaGrid();
-            }
-            else
-            {
-                MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int categoriaId = int.Parse(DgvCategoria.Rows[DgvCategoria.CurrentRow.Index].Cells[0].Value.ToString());
+
+                Categoria categoria = new Categoria();
+                string mensagem = categoria.Deletar(categoriaId);
+
+                if (categoria.Tem)
+                {
+                    MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ListaGrid();
+                }
+                else
+                {
+                    MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

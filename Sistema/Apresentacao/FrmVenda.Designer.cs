@@ -47,6 +47,8 @@ namespace Sistema.Apresentacao
             this.label6 = new System.Windows.Forms.Label();
             this.btnRemoverProd = new CustomControls.RJControls.BotaoCustomizado();
             this.btnSair = new CustomControls.RJControls.BotaoCustomizado();
+            this.txtData = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -120,7 +122,7 @@ namespace Sistema.Apresentacao
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.label4.Location = new System.Drawing.Point(684, 122);
+            this.label4.Location = new System.Drawing.Point(560, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 18);
             this.label4.TabIndex = 6;
@@ -130,10 +132,10 @@ namespace Sistema.Apresentacao
             // 
             this.txtQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.txtQuantidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txtQuantidade.Location = new System.Drawing.Point(785, 119);
+            this.txtQuantidade.Location = new System.Drawing.Point(654, 119);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(115, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(90, 25);
             this.txtQuantidade.TabIndex = 7;
             // 
             // lstProdutos
@@ -197,11 +199,11 @@ namespace Sistema.Apresentacao
             // 
             this.txtValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.txtValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txtValor.Location = new System.Drawing.Point(131, 119);
+            this.txtValor.Location = new System.Drawing.Point(130, 119);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValor.Name = "txtValor";
             this.txtValor.ReadOnly = true;
-            this.txtValor.Size = new System.Drawing.Size(150, 25);
+            this.txtValor.Size = new System.Drawing.Size(137, 25);
             this.txtValor.TabIndex = 12;
             // 
             // label5
@@ -218,18 +220,18 @@ namespace Sistema.Apresentacao
             // 
             this.txtQuantEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.txtQuantEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.txtQuantEstoque.Location = new System.Drawing.Point(513, 119);
+            this.txtQuantEstoque.Location = new System.Drawing.Point(459, 119);
             this.txtQuantEstoque.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantEstoque.Name = "txtQuantEstoque";
             this.txtQuantEstoque.ReadOnly = true;
-            this.txtQuantEstoque.Size = new System.Drawing.Size(115, 25);
+            this.txtQuantEstoque.Size = new System.Drawing.Size(90, 25);
             this.txtQuantEstoque.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
-            this.label6.Location = new System.Drawing.Point(322, 122);
+            this.label6.Location = new System.Drawing.Point(277, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 18);
             this.label6.TabIndex = 13;
@@ -277,12 +279,34 @@ namespace Sistema.Apresentacao
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // txtData
+            // 
+            this.txtData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.txtData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.txtData.Location = new System.Drawing.Point(812, 119);
+            this.txtData.Mask = "00/00/0000";
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(88, 25);
+            this.txtData.TabIndex = 26;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(221)))));
+            this.label7.Location = new System.Drawing.Point(766, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 18);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Data";
+            // 
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(914, 540);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtData);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnRemoverProd);
             this.Controls.Add(this.txtQuantEstoque);
@@ -332,5 +356,7 @@ namespace Sistema.Apresentacao
         private System.Windows.Forms.Label label6;
         private CustomControls.RJControls.BotaoCustomizado btnRemoverProd;
         private CustomControls.RJControls.BotaoCustomizado btnSair;
+        private System.Windows.Forms.MaskedTextBox txtData;
+        private System.Windows.Forms.Label label7;
     }
 }

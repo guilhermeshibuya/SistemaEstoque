@@ -80,22 +80,25 @@ namespace Sistema.Apresentacao
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            int clienteId = int.Parse(dgvCliente.Rows[dgvCliente.CurrentRow.Index].Cells[0].Value.ToString());
-
-            Cliente cliente = new Cliente(clienteId);
-
-            string mensagem = cliente.Deletar();
-
-            if (cliente.Tem)
+            if (MessageBox.Show("Deseja excluir o funcionário selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Lista();
-            }
-            else
-            {
-                MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                int clienteId = int.Parse(dgvCliente.Rows[dgvCliente.CurrentRow.Index].Cells[0].Value.ToString());
 
+                Cliente cliente = new Cliente(clienteId);
+
+                string mensagem = cliente.Deletar();
+
+                if (cliente.Tem)
+                {
+                    MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Lista();
+                }
+                else
+                {
+                    MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

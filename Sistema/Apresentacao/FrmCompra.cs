@@ -50,13 +50,16 @@ namespace Sistema.Apresentacao
 
         private void btnRemoverProd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Deseja remover o item selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                lstProdutos.SelectedItems[0].Remove();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Nenhum produto selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    lstProdutos.SelectedItems[0].Remove();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Nenhum produto selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

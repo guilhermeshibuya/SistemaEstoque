@@ -67,20 +67,22 @@ namespace Sistema
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            int codProduto = int.Parse(DgvProdutos.Rows[DgvProdutos.CurrentRow.Index].Cells[0].Value.ToString());
-
-            Produto prod = new Produto();
-            string mensagem = prod.Deletar(codProduto);
-            if (prod.Tem)
+            if (MessageBox.Show("Deseja excluir o produto selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ListaGrid();
-            }
-            else
-            {
-                MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                int codProduto = int.Parse(DgvProdutos.Rows[DgvProdutos.CurrentRow.Index].Cells[0].Value.ToString());
 
+                Produto prod = new Produto();
+                string mensagem = prod.Deletar(codProduto);
+                if (prod.Tem)
+                {
+                    MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ListaGrid();
+                }
+                else
+                {
+                    MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btn_sair_Click(object sender, EventArgs e)

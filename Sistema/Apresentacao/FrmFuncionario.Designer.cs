@@ -44,6 +44,7 @@ namespace Sistema.Apresentacao
             this.btnDeletar = new CustomControls.RJControls.BotaoCustomizado();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.btnLimpar = new CustomControls.RJControls.BotaoCustomizado();
+            this.btnSair = new CustomControls.RJControls.BotaoCustomizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,7 +150,7 @@ namespace Sistema.Apresentacao
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlterar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(212, 107);
+            this.btnAlterar.Location = new System.Drawing.Point(206, 107);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(96, 32);
             this.btnAlterar.TabIndex = 20;
@@ -170,7 +171,7 @@ namespace Sistema.Apresentacao
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeletar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.ForeColor = System.Drawing.Color.White;
-            this.btnDeletar.Location = new System.Drawing.Point(450, 107);
+            this.btnDeletar.Location = new System.Drawing.Point(322, 107);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(96, 32);
             this.btnDeletar.TabIndex = 19;
@@ -233,7 +234,7 @@ namespace Sistema.Apresentacao
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimpar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(331, 107);
+            this.btnLimpar.Location = new System.Drawing.Point(435, 107);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(96, 32);
             this.btnLimpar.TabIndex = 22;
@@ -242,12 +243,34 @@ namespace Sistema.Apresentacao
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnSair.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(71)))), ((int)(((byte)(255)))));
+            this.btnSair.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSair.BorderRadius = 6;
+            this.btnSair.BorderSize = 0;
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSair.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(547, 107);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(96, 32);
+            this.btnSair.TabIndex = 25;
+            this.btnSair.Text = "Sair";
+            this.btnSair.TextColor = System.Drawing.Color.White;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // FrmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(655, 406);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.btnAlterar);
@@ -284,5 +307,6 @@ namespace Sistema.Apresentacao
         private CustomControls.RJControls.BotaoCustomizado btnDeletar;
         private System.Windows.Forms.DataGridView dgvFuncionario;
         private CustomControls.RJControls.BotaoCustomizado btnLimpar;
+        private CustomControls.RJControls.BotaoCustomizado btnSair;
     }
 }

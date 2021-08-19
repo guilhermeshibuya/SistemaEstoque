@@ -60,6 +60,24 @@ namespace Sistema.Apresentacao
 
         private void btnVenda_Click(object sender, EventArgs e)
         {
+            DateTime data;
+            bool verificar = DateTime.TryParse(txtData.Text, out data);
+
+            if (!String.IsNullOrWhiteSpace(txtData.Text) && verificar && data != DateTime.Now)
+            {
+                if (MessageBox.Show("A data informada é diferente da data atual, deseja continuar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Venda(data);
+                txtData.Text = string.Empty;
+            }
+            else
+            {
+                Venda(DateTime.Now);
+            }
+           
+        }
+
+        private void Venda(DateTime data)
+        {
             if (lstProdutos.Items.Count != 0)
             {
                 Funcionario func = new Funcionario(int.Parse(cmbFuncionario.SelectedValue.ToString()));
@@ -75,8 +93,8 @@ namespace Sistema.Apresentacao
                     VendaEstoque vendaEstoque = new VendaEstoque(codEstoque, quant, valor);
                     listaVendaEstoque.Add(vendaEstoque);
                 }
-
-                Venda venda = new Venda(func, cliente, DateTime.Now, listaVendaEstoque);
+                
+                Venda venda = new Venda(func, cliente, data, listaVendaEstoque);
 
                 string mensagem = venda.RealizarVenda();
                 if (venda.Tem)
@@ -199,14 +217,17 @@ namespace Sistema.Apresentacao
 
         private void btnRemoverProd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Deseja excluir o item selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                lstProdutos.SelectedItems[0].Remove();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Nenhum produto selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                try
+                {
+                    lstProdutos.SelectedItems[0].Remove();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Nenhum produto selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }    
         }
 
         private void btnSair_Click(object sender, EventArgs e)

@@ -79,20 +79,23 @@ namespace Sistema.Apresentacao
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            int funcionarioId = int.Parse(dgvFuncionario.Rows[dgvFuncionario.CurrentRow.Index].Cells[0].Value.ToString());
-
-            Funcionario funcionario = new Funcionario(funcionarioId);
-
-            string mensagem = funcionario.Deletar();
-
-            if (funcionario.Tem)
+            if (MessageBox.Show("Deseja excluir o funcionário selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Lista();
-            }
-            else
-            {
-                MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int funcionarioId = int.Parse(dgvFuncionario.Rows[dgvFuncionario.CurrentRow.Index].Cells[0].Value.ToString());
+
+                Funcionario funcionario = new Funcionario(funcionarioId);
+
+                string mensagem = funcionario.Deletar();
+
+                if (funcionario.Tem)
+                {
+                    MessageBox.Show(mensagem, "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Lista();
+                }
+                else
+                {
+                    MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -136,6 +139,11 @@ namespace Sistema.Apresentacao
             txt_telefone.Text = string.Empty;
             dgvFuncionario.ClearSelection();
             dgvFuncionario.CurrentCell = null;
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
